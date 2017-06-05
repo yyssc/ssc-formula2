@@ -14,12 +14,12 @@ function getLink(href, text) {
   return `<a href=${href} rel="noopener noreferrer" target="_blank">${text}</a>`;
 }
 
-const README = getLink('https://github.com/airbnb/react-dates/blob/master/README.md', 'README');
-const wrapperSource = getLink('https://github.com/airbnb/react-dates/tree/master/examples', 'wrapper source');
+const README = getLink('https://github.com/yyssc/ssc-formula2/blob/master/README.md', 'README');
+const wrapperSource = getLink('https://github.com/yyssc/ssc-formula2/tree/master/examples', 'wrapper source');
 
 const helperText = `All examples are built using a wrapper component that is not exported by
-  react-dates. Please see the ${README} for more information about minimal setup or explore
-  the ${wrapperSource} to see how to integrate react-dates into your own app.`;
+  ssc-formula2. Please see the ${README} for more information about minimal setup or explore
+  the ${wrapperSource} to see how to integrate ssc-formula2 into your own app.`;
 
 addDecorator(story => (
   <div>
@@ -45,8 +45,8 @@ addDecorator(story => (
 ));
 
 setOptions({
-  name: 'REACT-DATES',
-  url: 'https://github.com/airbnb/react-dates',
+  name: 'SSC-FORMULA2',
+  url: 'https://github.com/yyssc/ssc-formula2',
 });
 
 function loadStories() {
