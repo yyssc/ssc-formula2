@@ -1,9 +1,6 @@
 import React from 'react';
 import { forbidExtraProps } from 'airbnb-prop-types';
 
-import TextBox from './TextBox';
-import FormuaTabs from './FormulaTabs';
-
 const propTypes = forbidExtraProps({
 });
 
@@ -11,7 +8,7 @@ export const defaultProps = {
 };
 
 
-export default class Formula extends React.Component {
+export default class TextBox extends React.Component {
   // constructor(props) {
   //   super(props);
   // }
@@ -24,7 +21,7 @@ export default class Formula extends React.Component {
    *
    * @param {any} nextProps
    *
-   * @memberof Formula
+   * @memberof TextBox
    */
   componentWillReceiveProps() {
   }
@@ -35,7 +32,7 @@ export default class Formula extends React.Component {
    * @param {any} nextProps
    * @param {any} nextState
    *
-   * @memberof Formula
+   * @memberof TextBox
    */
   // shouldComponentUpdate() {
   // }
@@ -46,7 +43,7 @@ export default class Formula extends React.Component {
    * @param {any} prevProps
    * @param {any} prevState
    *
-   * @memberof Formula
+   * @memberof TextBox
    */
   componentDidUpdate() {
   }
@@ -54,12 +51,11 @@ export default class Formula extends React.Component {
   render() {
     return (
       <div>
-        <TextBox />
-        <FormuaTabs />
+        TextBox
       </div>
     );
   }
 }
 
-Formula.propTypes = propTypes;
-Formula.defaultProps = defaultProps;
+TextBox.propTypes = propTypes;
+TextBox.defaultProps = defaultProps;
