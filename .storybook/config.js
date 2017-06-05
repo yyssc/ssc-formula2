@@ -63,6 +63,8 @@ function loadStories() {
   require('../stories/Formula');
   require('../stories/TextBox');
   require('../stories/FormulaTabs');
+  require('../stories/DanJuZiDuan');
+  require('../stories/SearchBox');
 }
 
 setAddon(infoAddon);
