@@ -1,13 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 
 import TextBox from './TextBox';
 import FormuaTabs from './FormulaTabs';
 
 const propTypes = forbidExtraProps({
+  onSubmit: PropTypes.func,
 });
 
 export const defaultProps = {
+  onSubmit: () => {},
 };
 
 
@@ -54,7 +57,9 @@ export default class Formula extends React.Component {
   render() {
     return (
       <div>
-        <TextBox />
+        <TextBox
+          onSubmit={this.props.onSubmit}
+        />
         <FormuaTabs />
       </div>
     );

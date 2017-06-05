@@ -50,7 +50,7 @@ setOptions({
 });
 
 function loadStories() {
-  require('../stories/DateRangePicker');
+  // require('../stories/DateRangePicker');
   // require('../stories/DateRangePicker_input');
   // require('../stories/DateRangePicker_calendar');
   // require('../stories/DateRangePicker_day');
@@ -61,6 +61,8 @@ function loadStories() {
   // require('../stories/DayPickerRangeController');
   // require('../stories/DayPicker');
   require('../stories/Formula');
+  require('../stories/TextBox');
+  require('../stories/FormulaTabs');
 }
 
 setAddon(infoAddon);
