@@ -8,6 +8,7 @@ import treeDataShape from '../shapes/treeDataShape';
 
 const propTypes = forbidExtraProps({
   onSubmit: PropTypes.func,
+  value: PropTypes.string,
   /**
    * 单据字段标签页中的树的数据
    */
@@ -20,6 +21,7 @@ const propTypes = forbidExtraProps({
 
 export const defaultProps = {
   onSubmit: () => {},
+  value: '',
 };
 
 
@@ -67,6 +69,7 @@ export default class Formula extends React.Component {
     return (
       <div>
         <TextBox
+          value={this.props.value}
           onSubmit={this.props.onSubmit}
         />
         <FormuaTabs

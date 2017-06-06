@@ -7,4 +7,10 @@ storiesOf('TextBox', module)
     <TextBox
       onSubmit={action('TextBox::onSubmit')}
     />
+  ))
+  .addWithInfo('init value', () => (
+    <TextBox
+      value={'foo'}
+      onSubmit={action('TextBox::onSubmit')}
+    />
   ));

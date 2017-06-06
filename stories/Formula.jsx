@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf, action } from '@kadira/storybook';
 import Formula from '../src/components/Formula';
 
 const 单据字段TreeData = [
@@ -79,5 +79,14 @@ storiesOf('Formula', module)
     <Formula
       单据字段TreeData={单据字段TreeData}
       档案转换TreeData={档案转换TreeData}
+      onSubmit={action('Formula::onSubmit')}
+    />
+  ))
+  .addWithInfo('init value', () => (
+    <Formula
+      value={'foo'}
+      单据字段TreeData={单据字段TreeData}
+      档案转换TreeData={档案转换TreeData}
+      onSubmit={action('Formula::onSubmit')}
     />
   ));
