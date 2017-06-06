@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 
 import SearchBox from './SearchBox';
@@ -7,9 +8,11 @@ import treeDataShape from '../shapes/treeDataShape';
 
 const propTypes = forbidExtraProps({
   treeData: treeDataShape.isRequired,
+  onTreeSelect: PropTypes.func,
 });
 
 export const defaultProps = {
+  onTreeSelect: () => {},
 };
 
 
@@ -59,6 +62,7 @@ export default class 单据字段Tab extends React.Component {
         <SearchBox />
         <FormulaTree
           treeData={this.props.treeData}
+          onSelect={this.props.onTreeSelect}
         />
       </div>
     );
