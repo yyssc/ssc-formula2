@@ -9,6 +9,7 @@ import 单据字段Tab from './单据字段Tab';
 import 固定值Tab from './固定值Tab';
 import 档案转换Tab from './档案转换Tab';
 import treeDataShape from '../shapes/treeDataShape';
+import 档案转换ItemsShape from '../shapes/档案转换ItemsShape';
 
 const propTypes = forbidExtraProps({
   on单据字段TreeSelect: PropTypes.func,
@@ -19,7 +20,7 @@ const propTypes = forbidExtraProps({
   /**
    * 档案转换标签页中的树的数据
    */
-  档案转换TreeData: treeDataShape.isRequired,
+  档案转换ItemsData: 档案转换ItemsShape.isRequired,
 });
 
 export const defaultProps = {
@@ -83,7 +84,7 @@ export default class FormulaTabs extends React.Component {
           </Tab>
           <Tab eventKey={'档案转换'} title="档案转换">
             <档案转换Tab
-              treeData={this.props.档案转换TreeData}
+              items={this.props.档案转换ItemsData}
             />
           </Tab>
           {/* <Tab eventKey={'环境变量'} title="环境变量">Tab 3 content</Tab>*/}

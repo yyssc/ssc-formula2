@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 import { Nav, NavItem } from 'react-bootstrap';
 
+import 档案转换ItemsShape from '../shapes/档案转换ItemsShape';
+
 const propTypes = forbidExtraProps({
   activeKey: PropTypes.string,
-  items: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    code: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-  })).isRequired,
+  items: 档案转换ItemsShape.isRequired,
 });
 
 export const defaultProps = {

@@ -3,40 +3,23 @@ import { storiesOf } from '@kadira/storybook';
 import { text } from '@kadira/storybook-addon-knobs';
 
 import SelectList from '../src/components/SelectList';
-
-const items = [
-  {
-    id: '0',
-    code: '456',
-    name: '789',
-  },
-  {
-    id: '1',
-    code: '2456',
-    name: '2789',
-  },
-  {
-    id: '2',
-    code: '3456',
-    name: '3789',
-  },
-];
+import json from './档案转换Data';
 
 storiesOf('SelectList', module)
   .addWithInfo('default', () => (
     <SelectList
-      items={items}
+      items={json}
     />
   ))
   .addWithInfo('activeKey', () => (
     <SelectList
-      items={items}
+      items={json}
       activeKey={'1'}
     />
   ))
   .addWithInfo('update activeKey', () => (
     <SelectList
-      items={items}
+      items={json}
       activeKey={text('SelectList.props.activeKey', '2')}
     />
   ));

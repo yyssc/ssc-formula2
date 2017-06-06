@@ -5,6 +5,7 @@ import { forbidExtraProps } from 'airbnb-prop-types';
 import TextBox from './TextBox';
 import FormuaTabs from './FormulaTabs';
 import treeDataShape from '../shapes/treeDataShape';
+import 档案转换ItemsShape from '../shapes/档案转换ItemsShape';
 
 const propTypes = forbidExtraProps({
   onSubmit: PropTypes.func,
@@ -16,7 +17,7 @@ const propTypes = forbidExtraProps({
   /**
    * 档案转换标签页中的树的数据
    */
-  档案转换TreeData: treeDataShape.isRequired,
+  档案转换ItemsData: 档案转换ItemsShape.isRequired,
 });
 
 export const defaultProps = {
@@ -86,7 +87,7 @@ export default class Formula extends React.Component {
         />
         <FormuaTabs
           单据字段TreeData={this.props.单据字段TreeData}
-          档案转换TreeData={this.props.档案转换TreeData}
+          档案转换ItemsData={this.props.档案转换ItemsData}
           on单据字段TreeSelect={this.handle单据字段TreeSelect}
         />
       </div>
