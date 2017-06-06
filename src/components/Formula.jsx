@@ -47,7 +47,12 @@ export default class Formula extends React.Component {
    *
    * @memberof Formula
    */
-  componentWillReceiveProps() {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.value !== this.state.value) {
+      this.setState({
+        value: nextProps.value,
+      });
+    }
   }
 
   /**

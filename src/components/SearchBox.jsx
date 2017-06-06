@@ -5,11 +5,13 @@ import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 
 const propTypes = forbidExtraProps({
   onChange: PropTypes.func,
+  onLocate: PropTypes.func,
   placeholder: PropTypes.string,
 });
 
 export const defaultProps = {
   onChange: () => {},
+  onLocate: () => {},
   placeholder: '',
 };
 
@@ -23,6 +25,7 @@ export default class SearchBox extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleLocate = this.handleLocate.bind(this);
   }
 
   componentDidMount() {
@@ -67,6 +70,10 @@ export default class SearchBox extends React.Component {
     this.props.onChange(event);
   }
 
+  handleLocate() {
+    this.props.onLocate(this.state.value);
+  }
+
   render() {
     return (
       <div>
@@ -82,8 +89,10 @@ export default class SearchBox extends React.Component {
             />
           </FormGroup>
           {' '}
-          <Button type="submit">
-            搜索
+          <Button
+            onClick={this.handleLocate}
+          >
+            确定
           </Button>
         </Form>
       </div>
