@@ -99,6 +99,7 @@
     "sass-loader": "^4.1.1",
     "sinon": "^2.3.2",
     "sinon-sandbox": "^1.0.2",
+    "ssc-refer2": "^0.1.35",
     "style-loader": "^0.16.1",
     "webpack": "^1.15.0"
   },
@@ -119,7 +120,8 @@
     "moment": "^2.18.1",
     "react": ">=0.14",
     "react-dom": ">=0.14",
-    "react-addons-shallow-compare": ">=0.14"
+    "react-addons-shallow-compare": ">=0.14",
+    "ssc-refer2": "^0.1.35"
   },
   "greenkeeper": {
     "ignore": [
