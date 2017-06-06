@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 import Tree, { TreeNode } from 'rc-tree';
 import 'rc-tree/assets/index.css';
@@ -7,9 +8,11 @@ import treeDataShape from '../shapes/treeDataShape';
 
 const propTypes = forbidExtraProps({
   treeData: treeDataShape.isRequired,
+  onSelect: PropTypes.func,
 });
 
 export const defaultProps = {
+  onSelect: () => {},
 };
 
 export default class FormulaTree extends React.Component {
@@ -76,6 +79,7 @@ export default class FormulaTree extends React.Component {
     this.setState({
       selectedKeys,
     });
+    this.props.onSelect(info.node);
   }
 
   render() {

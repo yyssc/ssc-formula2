@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf, action } from '@kadira/storybook';
 import FormulaTree from '../src/components/FormulaTree';
 
 const treeData = [
@@ -106,5 +106,15 @@ storiesOf('FormulaTree', module)
   .addWithInfo('default', () => (
     <FormulaTree
       treeData={treeData}
+    />
+  ))
+  .addWithInfo('onSelect', () => (
+    <FormulaTree
+      treeData={treeData}
+      // onSelect={action('ttt')}
+      onSelect={(o) => {
+        // 使用action会导致浏览器卡死...
+        console.log(o);
+      }}
     />
   ));
