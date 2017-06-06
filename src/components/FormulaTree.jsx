@@ -7,12 +7,14 @@ import 'rc-tree/assets/index.css';
 import treeDataShape from '../shapes/treeDataShape';
 
 const propTypes = forbidExtraProps({
-  treeData: treeDataShape.isRequired,
   onSelect: PropTypes.func,
+  selectedKey: PropTypes.string,
+  treeData: treeDataShape.isRequired,
 });
 
 export const defaultProps = {
   onSelect: () => {},
+  selectedKey: null,
 };
 
 export default class FormulaTree extends React.Component {
@@ -22,7 +24,7 @@ export default class FormulaTree extends React.Component {
     this.state = {
       expandedKeys: [props.treeData[0].key],
       autoExpandParent: true,
-      selectedKeys: [],
+      selectedKeys: [props.selectedKey],
     };
 
     this.onExpand = this.onExpand.bind(this);
@@ -39,7 +41,12 @@ export default class FormulaTree extends React.Component {
    *
    * @memberof FormulaTree
    */
-  componentWillReceiveProps() {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.selectedKey !== this.state.selectedKeys[0]) {
+      this.setState({
+        selectedKeys: [nextProps.selectedKey],
+      });
+    }
   }
 
   /**
