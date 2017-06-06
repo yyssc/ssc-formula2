@@ -4,9 +4,14 @@ import { forbidExtraProps } from 'airbnb-prop-types';
 
 import TextBox from './TextBox';
 import FormuaTabs from './FormulaTabs';
+import treeDataShape from '../shapes/treeDataShape';
 
 const propTypes = forbidExtraProps({
   onSubmit: PropTypes.func,
+  /**
+   * 单据字段标签页中的树的数据
+   */
+  danJuZiDuanTreeData: treeDataShape.isRequired,
 });
 
 export const defaultProps = {
@@ -60,7 +65,9 @@ export default class Formula extends React.Component {
         <TextBox
           onSubmit={this.props.onSubmit}
         />
-        <FormuaTabs />
+        <FormuaTabs
+          danJuZiDuanTreeData={this.props.danJuZiDuanTreeData}
+        />
       </div>
     );
   }

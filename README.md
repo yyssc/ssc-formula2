@@ -45,6 +45,18 @@ Ensure packages are installed with correct version numbers by running:
 import { Formula } from 'ssc-formula2';
 ```
 
+## 组件结构
+
+- Formula
+  - TextBox
+  - FormulaTabs
+    - DanJuZiDuan
+      - SearchBox
+      - DanJuZiDuanTree
+    - GuDingZhiTab
+      - [Refers]
+    - DangAnZhuanHuanTab
+
 [package-url]: https://npmjs.org/package/ssc-formula2
 [npm-version-svg]: http://versionbadg.es/yyssc/ssc-formula2.svg
 [travis-svg]: https://travis-ci.org/yyssc/ssc-formula2.svg

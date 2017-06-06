@@ -66,6 +66,7 @@ function loadStories() {
   require('../stories/DanJuZiDuan');
   require('../stories/SearchBox');
   require('../stories/DanJuZiDuanTree');
+  require('../stories/GuDingZhiTab');
 }
 
 setAddon(infoAddon);
