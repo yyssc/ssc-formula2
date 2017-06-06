@@ -70,8 +70,6 @@ export default class SearchBox extends React.Component {
   render() {
     return (
       <div>
-
-
         <Form inline>
           <span>定位</span>
           {' '}
