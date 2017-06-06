@@ -70,6 +70,7 @@ function loadStories() {
   require('../stories/FormulaTree');
   require('../stories/SearchBox');
   require('../stories/SelectList');
+  require('../stories/DetailBox');
   // containers
   require('../stories/Formula');
   require('../stories/FormulaTabs');

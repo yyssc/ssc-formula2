@@ -4,6 +4,7 @@ import { forbidExtraProps } from 'airbnb-prop-types';
 
 import SearchBox from './SearchBox';
 import FormulaTree from './FormulaTree';
+import DetailBox from './DetailBox';
 import treeDataShape from '../shapes/treeDataShape';
 
 const propTypes = forbidExtraProps({
@@ -63,6 +64,9 @@ export default class 单据字段Tab extends React.Component {
         <FormulaTree
           treeData={this.props.treeData}
           onSelect={this.props.onTreeSelect}
+        />
+        <DetailBox
+          text={'展示详细信息...'}
         />
       </div>
     );

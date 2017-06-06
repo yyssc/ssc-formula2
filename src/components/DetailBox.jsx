@@ -1,21 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 
-import SearchBox from './SearchBox';
-import SelectList from './SelectList';
-import DetailBox from './DetailBox';
-
-import 档案转换ItemsShape from '../shapes/档案转换ItemsShape';
-
 const propTypes = forbidExtraProps({
-  items: 档案转换ItemsShape.isRequired,
+  text: PropTypes.string,
 });
 
 export const defaultProps = {
+  text: '',
 };
 
-
-export default class 档案转换Tab extends React.Component {
+export default class DetailBox extends React.Component {
   // constructor(props) {
   //   super(props);
   // }
@@ -28,7 +23,7 @@ export default class 档案转换Tab extends React.Component {
    *
    * @param {any} nextProps
    *
-   * @memberof 档案转换Tab
+   * @memberof DetailBox
    */
   componentWillReceiveProps() {
   }
@@ -39,7 +34,7 @@ export default class 档案转换Tab extends React.Component {
    * @param {any} nextProps
    * @param {any} nextState
    *
-   * @memberof 档案转换Tab
+   * @memberof DetailBox
    */
   // shouldComponentUpdate() {
   // }
@@ -50,7 +45,7 @@ export default class 档案转换Tab extends React.Component {
    * @param {any} prevProps
    * @param {any} prevState
    *
-   * @memberof 档案转换Tab
+   * @memberof DetailBox
    */
   componentDidUpdate() {
   }
@@ -58,17 +53,12 @@ export default class 档案转换Tab extends React.Component {
   render() {
     return (
       <div>
-        <SearchBox />
-        <SelectList
-          items={this.props.items}
-        />
-        <DetailBox
-          text={'展示详细信息...'}
-        />
+        <hr />
+        <p>{this.props.text}</p>
       </div>
     );
   }
 }
 
-档案转换Tab.propTypes = propTypes;
-档案转换Tab.defaultProps = defaultProps;
+DetailBox.propTypes = propTypes;
+DetailBox.defaultProps = defaultProps;
