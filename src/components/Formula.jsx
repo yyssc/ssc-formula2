@@ -12,6 +12,10 @@ const propTypes = forbidExtraProps({
    * 单据字段标签页中的树的数据
    */
   danJuZiDuanTreeData: treeDataShape.isRequired,
+  /**
+   * 档案转换标签页中的树的数据
+   */
+  档案转换TreeData: treeDataShape.isRequired,
 });
 
 export const defaultProps = {
@@ -67,6 +71,7 @@ export default class Formula extends React.Component {
         />
         <FormuaTabs
           danJuZiDuanTreeData={this.props.danJuZiDuanTreeData}
+          档案转换TreeData={this.props.档案转换TreeData}
         />
       </div>
     );

@@ -55,9 +55,29 @@ const danJuZiDuanTreeData = [
   },
 ];
 
+const 档案转换TreeData = [
+  {
+    title: '0-0-label',
+    key: '0-0-key',
+  },
+  {
+    title: '0-1-label',
+    key: '0-1-key',
+  },
+  {
+    title: '0-2-label',
+    key: '0-2-key',
+  },
+  {
+    title: '0-3-label',
+    key: '0-3-key',
+  },
+];
+
 storiesOf('FormulaTabs', module)
   .addWithInfo('default', () => (
     <FormulaTabs
       danJuZiDuanTreeData={danJuZiDuanTreeData}
+      档案转换TreeData={档案转换TreeData}
     />
   ));

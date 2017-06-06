@@ -6,6 +6,7 @@ import { Tabs, Tab } from 'react-bootstrap';
 
 import DanJuZiDuan from './DanJuZiDuan';
 import 固定值Tab from './固定值Tab';
+import 档案转换Tab from './档案转换Tab';
 import treeDataShape from '../shapes/treeDataShape';
 
 const propTypes = forbidExtraProps({
@@ -13,6 +14,10 @@ const propTypes = forbidExtraProps({
    * 单据字段标签页中的树的数据
    */
   danJuZiDuanTreeData: treeDataShape.isRequired,
+  /**
+   * 档案转换标签页中的树的数据
+   */
+  档案转换TreeData: treeDataShape.isRequired,
 });
 
 export const defaultProps = {
@@ -72,7 +77,11 @@ export default class FormulaTabs extends React.Component {
           <Tab eventKey={'固定值'} title="固定值">
             <固定值Tab />
           </Tab>
-          <Tab eventKey={'档案转换'} title="档案转换">Tab 3 content</Tab>
+          <Tab eventKey={'档案转换'} title="档案转换">
+            <档案转换Tab
+              treeData={this.props.档案转换TreeData}
+            />
+          </Tab>
           {/* <Tab eventKey={'环境变量'} title="环境变量">Tab 3 content</Tab>*/}
         </Tabs>
       </div>

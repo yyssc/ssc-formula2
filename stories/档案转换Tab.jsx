@@ -1,8 +1,10 @@
+/* eslint-disable react/jsx-pascal-case */
+
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import Formula from '../src/components/Formula';
+import 档案转换Tab from '../src/components/档案转换Tab';
 
-const danJuZiDuanTreeData = [
+const treeData = [
   {
     title: '0-0-label',
     key: '0-0-key',
@@ -55,29 +57,9 @@ const danJuZiDuanTreeData = [
   },
 ];
 
-const 档案转换TreeData = [
-  {
-    title: '0-0-label',
-    key: '0-0-key',
-  },
-  {
-    title: '0-1-label',
-    key: '0-1-key',
-  },
-  {
-    title: '0-2-label',
-    key: '0-2-key',
-  },
-  {
-    title: '0-3-label',
-    key: '0-3-key',
-  },
-];
-
-storiesOf('Formula', module)
+storiesOf('档案转换Tab', module)
   .addWithInfo('default', () => (
-    <Formula
-      danJuZiDuanTreeData={danJuZiDuanTreeData}
-      档案转换TreeData={档案转换TreeData}
+    <档案转换Tab
+      treeData={treeData}
     />
   ));
