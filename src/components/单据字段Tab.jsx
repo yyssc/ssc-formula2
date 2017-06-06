@@ -18,9 +18,12 @@ export const defaultProps = {
 
 
 export default class 单据字段Tab extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+
+    this.handleFindNext = this.handleFindNext.bind(this);
+    this.handleSearchBoxChange = this.handleSearchBoxChange.bind(this);
+  }
 
   componentDidMount() {
   }
@@ -57,10 +60,21 @@ export default class 单据字段Tab extends React.Component {
   componentDidUpdate() {
   }
 
+  handleFindNext(searchText) {
+
+  }
+
+  handleSearchBoxChange(searchText) {
+
+  }
+
   render() {
     return (
       <div>
-        <SearchBox />
+        <SearchBox
+          onClick={this.handleFindNext}
+          onChange={this.handleSearchBoxChange}
+        />
         <FormulaTree
           treeData={this.props.treeData}
           onSelect={this.props.onTreeSelect}
