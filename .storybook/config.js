@@ -69,6 +69,7 @@ function loadStories() {
   require('../stories/TextBox');
   require('../stories/FormulaTree');
   require('../stories/SearchBox');
+  require('../stories/SelectList');
   // containers
   require('../stories/Formula');
   require('../stories/FormulaTabs');
