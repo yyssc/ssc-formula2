@@ -13,8 +13,8 @@ storiesOf('SearchBox', module)
       placeholder="Please input ..."
     />
   ))
-  .addWithInfo('onLocate', () => (
+  .addWithInfo('onClick', () => (
     <SearchBox
-      onLocate={action('SearchBox::onLocate')}
+      onLoconClickate={action('SearchBox::onClick')}
     />
   ));

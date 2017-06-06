@@ -16,9 +16,17 @@ export const defaultProps = {
 
 
 export default class 档案转换Tab extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentSelectedIndex: 0,
+      matchResults: [],
+    };
+
+    this.handleFindNext = this.handleFindNext.bind(this);
+    this.handleSearchBoxChange = this.handleSearchBoxChange.bind(this);
+  }
 
   componentDidMount() {
   }
@@ -55,11 +63,83 @@ export default class 档案转换Tab extends React.Component {
   componentDidUpdate() {
   }
 
+  getSelectedItemId() {
+    if (this.state.matchResults.length > 0) {
+      return this.state.matchResults[this.state.currentSelectedIndex].id;
+    }
+    return null;
+  }
+
+  /**
+   * Search for text in items
+   * @param {any} text
+   * @returns {Array}
+   * @memberof 档案转换Tab
+   */
+  search(text) {
+    if (text === '') {
+      return [];
+    }
+    return this.props.items.filter((item) => {
+      if (item.name.indexOf(text) !== -1) {
+        return true;
+      }
+      return false;
+    });
+  }
+
+  /**
+   * 寻找下一个匹配项目
+   * @param {string} searchText 文本框中的值
+   * @memberof 档案转换Tab
+   */
+  handleFindNext() {
+    const { length } = this.state.matchResults;
+    if (length < 2) {
+      return null;
+    }
+    const currentIdx = this.state.currentSelectedIndex;
+    if (currentIdx < length - 1) {
+      this.increaseIndex();
+    } else {
+      this.resetIndex();
+    }
+    return null;
+  }
+
+  increaseIndex() {
+    this.setState({
+      currentSelectedIndex: this.state.currentSelectedIndex + 1,
+    });
+  }
+
+  resetIndex() {
+    this.setState({
+      currentSelectedIndex: 0,
+    });
+  }
+
+  /**
+   * 定位框的内容发生变化的时候
+   * @param {any} event
+   * @memberof 档案转换Tab
+   */
+  handleSearchBoxChange(searchText) {
+    this.setState({
+      matchResults: this.search(searchText),
+    });
+    this.resetIndex();
+  }
+
   render() {
     return (
       <div>
-        <SearchBox />
+        <SearchBox
+          onClick={this.handleFindNext}
+          onChange={this.handleSearchBoxChange}
+        />
         <SelectList
+          activeKey={this.getSelectedItemId()}
           items={this.props.items}
         />
         <DetailBox

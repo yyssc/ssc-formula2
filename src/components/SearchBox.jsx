@@ -4,14 +4,20 @@ import { forbidExtraProps } from 'airbnb-prop-types';
 import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 
 const propTypes = forbidExtraProps({
+  /**
+   * 返回变化之后的值
+   */
   onChange: PropTypes.func,
-  onLocate: PropTypes.func,
+  /**
+   * 点击定位按钮的时候，返回当前文本框中的内容
+   */
+  onClick: PropTypes.func,
   placeholder: PropTypes.string,
 });
 
 export const defaultProps = {
   onChange: () => {},
-  onLocate: () => {},
+  onClick: () => {},
   placeholder: '',
 };
 
@@ -25,7 +31,7 @@ export default class SearchBox extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleLocate = this.handleLocate.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   componentDidMount() {
@@ -64,14 +70,18 @@ export default class SearchBox extends React.Component {
   }
 
   handleChange(event) {
+    const { value } = event.target;
     this.setState({
-      value: event.target.value,
+      value,
     });
-    this.props.onChange(event);
+    this.props.onChange(value);
   }
 
-  handleLocate() {
-    this.props.onLocate(this.state.value);
+  handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      this.props.onClick(this.state.value);
+      event.preventDefault();
+    }
   }
 
   render() {
@@ -86,11 +96,14 @@ export default class SearchBox extends React.Component {
               value={this.state.value}
               placeholder={this.props.placeholder}
               onChange={this.handleChange}
+              onKeyPress={this.handleKeyPress}
             />
           </FormGroup>
           {' '}
           <Button
-            onClick={this.handleLocate}
+            onClick={() => {
+              this.props.onClick(this.state.value);
+            }}
           >
             确定
           </Button>

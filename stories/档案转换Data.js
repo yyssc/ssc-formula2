@@ -1,18 +1,33 @@
 const json = [
   {
     id: '0',
-    code: '456',
-    name: '789',
+    code: 'ia01',
+    name: '物料',
   },
   {
     id: '1',
-    code: '2456',
-    name: '2789',
+    code: 'ia02',
+    name: '差异',
   },
   {
     id: '2',
-    code: '3456',
-    name: '3789',
+    code: 'ia03',
+    name: '材料采购',
+  },
+  {
+    id: '3',
+    code: 'ia04',
+    name: '委托加工',
+  },
+  {
+    id: '4',
+    code: 'ia05',
+    name: '委托代销',
+  },
+  {
+    id: '5',
+    code: 'ia06',
+    name: '委托xx',
   },
 ];
 
