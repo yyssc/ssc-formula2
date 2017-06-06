@@ -15,12 +15,12 @@ export const defaultProps = {
   onSelect: () => {},
 };
 
-export default class FormulaTree extends React.Component {
+export default class TreeNodeWrapper extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      expandedKeys: [props.treeData[0].key],
+      expandedKeys: [],
       autoExpandParent: true,
       selectedKeys: [],
     };
@@ -37,7 +37,7 @@ export default class FormulaTree extends React.Component {
    *
    * @param {any} nextProps
    *
-   * @memberof FormulaTree
+   * @memberof TreeNodeWrapper
    */
   componentWillReceiveProps() {
   }
@@ -48,7 +48,7 @@ export default class FormulaTree extends React.Component {
    * @param {any} nextProps
    * @param {any} nextState
    *
-   * @memberof FormulaTree
+   * @memberof TreeNodeWrapper
    */
   // shouldComponentUpdate() {
   // }
@@ -59,7 +59,7 @@ export default class FormulaTree extends React.Component {
    * @param {any} prevProps
    * @param {any} prevState
    *
-   * @memberof FormulaTree
+   * @memberof TreeNodeWrapper
    */
   componentDidUpdate() {
   }
@@ -83,43 +83,16 @@ export default class FormulaTree extends React.Component {
   }
 
   render() {
-    const loop = data => data.map((item) => {
-      if (item.children) {
-        return (
-          <TreeNode
-            key={item.key}
-            title={item.title}
-            code={item.code}
-          >
-            {loop(item.children)}
-          </TreeNode>
-        );
-      }
-      return (
-        <TreeNode
-          key={item.key}
-          title={item.title}
-          code={item.code}
-        />
-      );
-    });
     return (
-      <div className="dan-ju-zi-duan-tree">
-        <Tree
-          showLine
-          onExpand={this.onExpand}
-          expandedKeys={this.state.expandedKeys}
-          autoExpandParent={this.state.autoExpandParent}
-          onSelect={this.onSelect}
-          selectedKeys={this.state.selectedKeys}
-        >
-          {loop(this.props.treeData)}
-        </Tree>
-      </div>
+      <TreeNode
+        key={this.props.key}
+        title={this.props.title}
+      >
+      </TreeNode>
     );
   }
 
 }
 
-FormulaTree.propTypes = propTypes;
-FormulaTree.defaultProps = defaultProps;
+TreeNodeWrapper.propTypes = propTypes;
+TreeNodeWrapper.defaultProps = defaultProps;

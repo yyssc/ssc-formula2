@@ -73,7 +73,7 @@ export default class Formula extends React.Component {
 
   handle单据字段TreeSelect(treeNodeObj) {
     this.setState({
-      value: `${this.state.value} ${treeNodeObj.props.eventKey}`,
+      value: `${this.state.value} ${treeNodeObj.props.code}`,
     });
   }
 
