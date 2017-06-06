@@ -36,7 +36,12 @@ export default class TextBox extends React.Component {
    *
    * @memberof TextBox
    */
-  componentWillReceiveProps() {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.value !== this.state.value) {
+      this.setState({
+        value: nextProps.value,
+      });
+    }
   }
 
   /**
@@ -72,7 +77,7 @@ export default class TextBox extends React.Component {
       <div>
         <Grid fluid>
           <Row>
-            <Col xs={12} md={10}>
+            <Col xs={10} md={10}>
               <FormGroup controlId="formControlsTextarea">
                 {/* <ControlLabel>Textarea</ControlLabel>*/}
                 <FormControl
@@ -84,7 +89,7 @@ export default class TextBox extends React.Component {
                 />
               </FormGroup>
             </Col>
-            <Col xs={12} md={2}>
+            <Col xs={2} md={2}>
               <ButtonToolbar>
                 <Button
                   block

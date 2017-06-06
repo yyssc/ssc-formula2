@@ -50,6 +50,7 @@
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "^3.3.0",
     "@kadira/storybook": "^2.35.3",
+    "@kadira/storybook-addon-knobs": "^1.7.1",
     "@kadira/storybook-addon-options": "^1.0.2",
     "airbnb-js-shims": "^1.1.1",
     "babel-cli": "^6.24.1",

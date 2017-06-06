@@ -3,12 +3,17 @@ import moment from 'moment';
 import { configure, addDecorator, setAddon } from '@kadira/storybook';
 import infoAddon from '@kadira/react-storybook-addon-info';
 import { setOptions } from '@kadira/storybook-addon-options';
+import { withKnobs } from '@kadira/storybook-addon-knobs';
 import '../css/styles.scss';
 
 addDecorator((story) => {
   moment.locale('en');
   return (story());
 });
+
+// Knobs allow you to edit React props dynamically using the Storybook UI.
+// You can also use Knobs as a dynamic variable inside stories.
+addDecorator(withKnobs);
 
 function getLink(href, text) {
   return `<a href=${href} rel="noopener noreferrer" target="_blank">${text}</a>`;

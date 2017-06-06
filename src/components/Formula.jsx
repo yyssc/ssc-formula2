@@ -26,9 +26,15 @@ export const defaultProps = {
 
 
 export default class Formula extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: props.value,
+    };
+
+    this.handle单据字段TreeSelect = this.handle单据字段TreeSelect.bind(this);
+  }
 
   componentDidMount() {
   }
@@ -65,16 +71,23 @@ export default class Formula extends React.Component {
   componentDidUpdate() {
   }
 
+  handle单据字段TreeSelect(treeNodeObj) {
+    this.setState({
+      value: `${this.state.value} ${treeNodeObj.props.eventKey}`,
+    });
+  }
+
   render() {
     return (
       <div>
         <TextBox
-          value={this.props.value}
+          value={this.state.value}
           onSubmit={this.props.onSubmit}
         />
         <FormuaTabs
           单据字段TreeData={this.props.单据字段TreeData}
           档案转换TreeData={this.props.档案转换TreeData}
+          on单据字段TreeSelect={this.handle单据字段TreeSelect}
         />
       </div>
     );

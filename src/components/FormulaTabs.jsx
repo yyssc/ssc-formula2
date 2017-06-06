@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-pascal-case */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 import { Tabs, Tab } from 'react-bootstrap';
 
@@ -10,6 +11,7 @@ import 档案转换Tab from './档案转换Tab';
 import treeDataShape from '../shapes/treeDataShape';
 
 const propTypes = forbidExtraProps({
+  on单据字段TreeSelect: PropTypes.func,
   /**
    * 单据字段标签页中的树的数据
    */
@@ -21,6 +23,7 @@ const propTypes = forbidExtraProps({
 });
 
 export const defaultProps = {
+  on单据字段TreeSelect: () => {},
 };
 
 
@@ -72,6 +75,7 @@ export default class FormulaTabs extends React.Component {
           <Tab eventKey={'单据字段'} title="单据字段">
             <单据字段Tab
               treeData={this.props.单据字段TreeData}
+              onTreeSelect={this.props.on单据字段TreeSelect}
             />
           </Tab>
           <Tab eventKey={'固定值'} title="固定值">
