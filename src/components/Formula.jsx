@@ -11,7 +11,7 @@ const propTypes = forbidExtraProps({
   /**
    * 单据字段标签页中的树的数据
    */
-  danJuZiDuanTreeData: treeDataShape.isRequired,
+  单据字段TreeData: treeDataShape.isRequired,
   /**
    * 档案转换标签页中的树的数据
    */
@@ -70,7 +70,7 @@ export default class Formula extends React.Component {
           onSubmit={this.props.onSubmit}
         />
         <FormuaTabs
-          danJuZiDuanTreeData={this.props.danJuZiDuanTreeData}
+          单据字段TreeData={this.props.单据字段TreeData}
           档案转换TreeData={this.props.档案转换TreeData}
         />
       </div>

@@ -4,7 +4,7 @@ import React from 'react';
 import { forbidExtraProps } from 'airbnb-prop-types';
 import { Tabs, Tab } from 'react-bootstrap';
 
-import DanJuZiDuan from './DanJuZiDuan';
+import 单据字段Tab from './单据字段Tab';
 import 固定值Tab from './固定值Tab';
 import 档案转换Tab from './档案转换Tab';
 import treeDataShape from '../shapes/treeDataShape';
@@ -13,7 +13,7 @@ const propTypes = forbidExtraProps({
   /**
    * 单据字段标签页中的树的数据
    */
-  danJuZiDuanTreeData: treeDataShape.isRequired,
+  单据字段TreeData: treeDataShape.isRequired,
   /**
    * 档案转换标签页中的树的数据
    */
@@ -70,8 +70,8 @@ export default class FormulaTabs extends React.Component {
         <Tabs defaultActiveKey={'单据字段'} id="ssc-formula2">
           {/* <Tab eventKey={'函数'} title="函数">Tab 1 content</Tab>*/}
           <Tab eventKey={'单据字段'} title="单据字段">
-            <DanJuZiDuan
-              treeData={this.props.danJuZiDuanTreeData}
+            <单据字段Tab
+              treeData={this.props.单据字段TreeData}
             />
           </Tab>
           <Tab eventKey={'固定值'} title="固定值">

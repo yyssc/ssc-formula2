@@ -2,7 +2,7 @@ import React from 'react';
 import { forbidExtraProps } from 'airbnb-prop-types';
 
 import SearchBox from './SearchBox';
-import DanJuZiDuanTree from './DanJuZiDuanTree';
+import FormulaTree from './FormulaTree';
 import treeDataShape from '../shapes/treeDataShape';
 
 const propTypes = forbidExtraProps({
@@ -57,7 +57,7 @@ export default class 档案转换Tab extends React.Component {
     return (
       <div>
         <SearchBox />
-        <DanJuZiDuanTree
+        <FormulaTree
           treeData={this.props.treeData}
         />
       </div>

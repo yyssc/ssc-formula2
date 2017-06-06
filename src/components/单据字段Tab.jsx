@@ -2,7 +2,7 @@ import React from 'react';
 import { forbidExtraProps } from 'airbnb-prop-types';
 
 import SearchBox from './SearchBox';
-import DanJuZiDuanTree from './DanJuZiDuanTree';
+import FormulaTree from './FormulaTree';
 import treeDataShape from '../shapes/treeDataShape';
 
 const propTypes = forbidExtraProps({
@@ -13,7 +13,7 @@ export const defaultProps = {
 };
 
 
-export default class DanJuZiDuan extends React.Component {
+export default class 单据字段Tab extends React.Component {
   // constructor(props) {
   //   super(props);
   // }
@@ -26,7 +26,7 @@ export default class DanJuZiDuan extends React.Component {
    *
    * @param {any} nextProps
    *
-   * @memberof DanJuZiDuan
+   * @memberof 单据字段Tab
    */
   componentWillReceiveProps() {
   }
@@ -37,7 +37,7 @@ export default class DanJuZiDuan extends React.Component {
    * @param {any} nextProps
    * @param {any} nextState
    *
-   * @memberof DanJuZiDuan
+   * @memberof 单据字段Tab
    */
   // shouldComponentUpdate() {
   // }
@@ -48,7 +48,7 @@ export default class DanJuZiDuan extends React.Component {
    * @param {any} prevProps
    * @param {any} prevState
    *
-   * @memberof DanJuZiDuan
+   * @memberof 单据字段Tab
    */
   componentDidUpdate() {
   }
@@ -57,7 +57,7 @@ export default class DanJuZiDuan extends React.Component {
     return (
       <div>
         <SearchBox />
-        <DanJuZiDuanTree
+        <FormulaTree
           treeData={this.props.treeData}
         />
       </div>
@@ -65,5 +65,5 @@ export default class DanJuZiDuan extends React.Component {
   }
 }
 
-DanJuZiDuan.propTypes = propTypes;
-DanJuZiDuan.defaultProps = defaultProps;
+单据字段Tab.propTypes = propTypes;
+单据字段Tab.defaultProps = defaultProps;

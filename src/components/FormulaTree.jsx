@@ -12,7 +12,7 @@ const propTypes = forbidExtraProps({
 export const defaultProps = {
 };
 
-export default class DanJuZiDuanTree extends React.Component {
+export default class FormulaTree extends React.Component {
   constructor(props) {
     super(props);
 
@@ -34,7 +34,7 @@ export default class DanJuZiDuanTree extends React.Component {
    *
    * @param {any} nextProps
    *
-   * @memberof DanJuZiDuanTree
+   * @memberof FormulaTree
    */
   componentWillReceiveProps() {
   }
@@ -45,7 +45,7 @@ export default class DanJuZiDuanTree extends React.Component {
    * @param {any} nextProps
    * @param {any} nextState
    *
-   * @memberof DanJuZiDuanTree
+   * @memberof FormulaTree
    */
   // shouldComponentUpdate() {
   // }
@@ -56,7 +56,7 @@ export default class DanJuZiDuanTree extends React.Component {
    * @param {any} prevProps
    * @param {any} prevState
    *
-   * @memberof DanJuZiDuanTree
+   * @memberof FormulaTree
    */
   componentDidUpdate() {
   }
@@ -112,5 +112,5 @@ export default class DanJuZiDuanTree extends React.Component {
 
 }
 
-DanJuZiDuanTree.propTypes = propTypes;
-DanJuZiDuanTree.defaultProps = defaultProps;
+FormulaTree.propTypes = propTypes;
+FormulaTree.defaultProps = defaultProps;

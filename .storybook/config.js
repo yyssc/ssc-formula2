@@ -60,13 +60,16 @@ function loadStories() {
   // require('../stories/SingleDatePicker_day');
   // require('../stories/DayPickerRangeController');
   // require('../stories/DayPicker');
-  require('../stories/Formula');
+  // components
   require('../stories/TextBox');
-  require('../stories/FormulaTabs');
-  require('../stories/DanJuZiDuan');
+  require('../stories/FormulaTree');
   require('../stories/SearchBox');
-  require('../stories/DanJuZiDuanTree');
+  // containers
+  require('../stories/Formula');
+  require('../stories/FormulaTabs');
+  require('../stories/单据字段Tab');
   require('../stories/固定值Tab');
+  require('../stories/档案转换Tab');
 }
 
 setAddon(infoAddon);

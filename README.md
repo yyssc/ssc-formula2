@@ -50,12 +50,12 @@ import { Formula } from 'ssc-formula2';
 - Formula
   - TextBox
   - FormulaTabs
-    - DanJuZiDuan
+    - 单据字段Tab
       - SearchBox
-      - DanJuZiDuanTree
-    - GuDingZhiTab
+      - FormulaTree
+    - 固定值Tab
       - [Refers]
-    - DangAnZhuanHuanTab
+    - 档案转换Tab
 
 [package-url]: https://npmjs.org/package/ssc-formula2
 [npm-version-svg]: http://versionbadg.es/yyssc/ssc-formula2.svg

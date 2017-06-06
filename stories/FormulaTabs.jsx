@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import FormulaTabs from '../src/components/FormulaTabs';
 
-const danJuZiDuanTreeData = [
+const 单据字段TreeData = [
   {
     title: '0-0-label',
     key: '0-0-key',
@@ -77,7 +77,7 @@ const 档案转换TreeData = [
 storiesOf('FormulaTabs', module)
   .addWithInfo('default', () => (
     <FormulaTabs
-      danJuZiDuanTreeData={danJuZiDuanTreeData}
+      单据字段TreeData={单据字段TreeData}
       档案转换TreeData={档案转换TreeData}
     />
   ));
