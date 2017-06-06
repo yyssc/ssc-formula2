@@ -2,8 +2,11 @@ import React from 'react';
 import { forbidExtraProps } from 'airbnb-prop-types';
 
 import SearchBox from './SearchBox';
+import DanJuZiDuanTree from './DanJuZiDuanTree';
+import treeDataShape from '../shapes/treeDataShape';
 
 const propTypes = forbidExtraProps({
+  treeData: treeDataShape.isRequired,
 });
 
 export const defaultProps = {
@@ -53,7 +56,10 @@ export default class DanJuZiDuan extends React.Component {
   render() {
     return (
       <div>
-        <span>定位</span><SearchBox />
+        <SearchBox />
+        <DanJuZiDuanTree
+          treeData={this.props.treeData}
+        />
       </div>
     );
   }

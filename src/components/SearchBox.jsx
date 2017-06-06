@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
-import { FormGroup, FormControl } from 'react-bootstrap';
+import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 
 const propTypes = forbidExtraProps({
   onChange: PropTypes.func,
@@ -70,14 +70,24 @@ export default class SearchBox extends React.Component {
   render() {
     return (
       <div>
-        <FormGroup>
-          <FormControl
-            type="text"
-            value={this.state.value}
-            placeholder={this.props.placeholder}
-            onChange={this.handleChange}
-          />
-        </FormGroup>
+
+
+        <Form inline>
+          <span>定位</span>
+          {' '}
+          <FormGroup>
+            <FormControl
+              type="text"
+              value={this.state.value}
+              placeholder={this.props.placeholder}
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+          {' '}
+          <Button type="submit">
+            搜索
+          </Button>
+        </Form>
       </div>
     );
   }

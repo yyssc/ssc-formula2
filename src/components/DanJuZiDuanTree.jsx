@@ -1,17 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 import Tree, { TreeNode } from 'rc-tree';
 import 'rc-tree/assets/index.css';
 
-const nodeShape = {
-  title: PropTypes.string.isRequired,
-  key: PropTypes.string.isRequired,
-};
-nodeShape.children = PropTypes.arrayOf(PropTypes.shape(nodeShape));
+import treeDataShape from '../shapes/treeDataShape';
 
 const propTypes = forbidExtraProps({
-  treeData: PropTypes.arrayOf(nodeShape).isRequired,
+  treeData: treeDataShape.isRequired,
 });
 
 export const defaultProps = {
