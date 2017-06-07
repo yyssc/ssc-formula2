@@ -8,6 +8,11 @@ const propTypes = forbidExtraProps({
    * 档案初始值
    */
   refCode: PropTypes.string,
+  /**
+   * 参照组件<Refers>内部可以发起请求
+   * http://127.0.0.1:3009/refbase_ctr/queryRefJSON
+   */
+  referDataUrl: PropTypes.string.isRequired,
 });
 
 export const defaultProps = {
@@ -15,10 +20,9 @@ export const defaultProps = {
 };
 
 export default class 固定值Tab extends React.Component {
-  constructor(props) {
-    super(props);
-    this.referDataUrl = 'http://127.0.0.1:3009/refbase_ctr/queryRefJSON';
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   componentDidMount() {
   }
@@ -70,7 +74,7 @@ export default class 固定值Tab extends React.Component {
           onChange={() => {}}
           placeholder="请选择..."
           referConditions={referConditions}
-          referDataUrl={this.referDataUrl}
+          referDataUrl={this.props.referDataUrl}
           referType="list"
           defaultSelected={[]}
         />
@@ -81,7 +85,7 @@ export default class 固定值Tab extends React.Component {
           onChange={() => {}}
           placeholder="请选择..."
           referConditions={referConditions}
-          referDataUrl={this.referDataUrl}
+          referDataUrl={this.props.referDataUrl}
           referType="list"
           defaultSelected={[]}
         />

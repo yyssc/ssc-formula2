@@ -12,6 +12,7 @@ storiesOf('Formula', module)
   .addWithInfo('default', () => (
     <Formula
       单据字段TreeData={单据字段TreeData}
+      固定值ReferDataUrl="http://127.0.0.1:3009/refbase_ctr/queryRefJSON"
       档案转换ItemsData={档案转换ItemsData}
       onSubmit={action('Formula::onSubmit')}
     />
@@ -20,6 +21,7 @@ storiesOf('Formula', module)
     <Formula
       value={'foo'}
       单据字段TreeData={单据字段TreeData}
+      固定值ReferDataUrl="http://127.0.0.1:3009/refbase_ctr/queryRefJSON"
       档案转换ItemsData={档案转换ItemsData}
       onSubmit={action('Formula::onSubmit')}
     />
@@ -28,6 +30,7 @@ storiesOf('Formula', module)
     <Formula
       value={text('Formula.props.value', 'old')}
       单据字段TreeData={单据字段TreeData}
+      固定值ReferDataUrl="http://127.0.0.1:3009/refbase_ctr/queryRefJSON"
       档案转换ItemsData={档案转换ItemsData}
       onSubmit={action('Formula::onSubmit')}
     />

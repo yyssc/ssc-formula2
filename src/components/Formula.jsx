@@ -15,6 +15,10 @@ const propTypes = forbidExtraProps({
    */
   单据字段TreeData: treeDataShape.isRequired,
   /**
+   * 固定值标签页中参照需要发起请求的URL
+   */
+  固定值ReferDataUrl: PropTypes.string.isRequired,
+  /**
    * 档案转换标签页中的树的数据
    */
   档案转换ItemsData: 档案转换ItemsShape.isRequired,
@@ -92,6 +96,7 @@ export default class Formula extends React.Component {
         />
         <FormuaTabs
           单据字段TreeData={this.props.单据字段TreeData}
+          固定值ReferDataUrl={this.props.固定值ReferDataUrl}
           档案转换ItemsData={this.props.档案转换ItemsData}
           on单据字段TreeSelect={this.handle单据字段TreeSelect}
         />
