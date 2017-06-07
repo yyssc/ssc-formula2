@@ -8,13 +8,13 @@
 
 [![npm badge][npm-badge-png]][package-url]
 
-> An easily internationalizable, mobile-friendly datepicker library for the web.
+> An formula editor for the Yonyou.
 
 ![ssc-formula2 in action](https://raw.githubusercontent.com/yyssc/ssc-formula2/master/ssc-formula2-demo.gif)
 
 ## Live Playground
 
-For examples of the datepicker in action, go to https://yyssc.github/ssc-formula2.
+For examples of the formula in action, go to https://yyssc.github.io/ssc-formula2.
 
 OR
 
@@ -56,6 +56,13 @@ import { Formula } from 'ssc-formula2';
     - 固定值Tab
       - [Refers]
     - 档案转换Tab
+
+## MAINTAINING.md
+
+```
+npm version patch
+npm publish
+```
 
 [package-url]: https://npmjs.org/package/ssc-formula2
 [npm-version-svg]: http://versionbadg.es/yyssc/ssc-formula2.svg
