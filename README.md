@@ -64,7 +64,9 @@ import 'rc-tree/assets/index.css';
 
 ## MAINTAINING.md
 
-How to publish to npm
+How to update from v0.2.1 to v0.2.2, and publish to npm
+
+Modify `CHANGELOG.md` to add information for v0.2.2
 
 ```
 npm version patch --force
@@ -73,6 +75,8 @@ npm version patch --force
 PS:如果直接使用`npm publish`虽然会发布到npm上，但是不会在git中打tag
 
 TODO 如何发布v0.1.0第一版？
+
+TODO 使用`--force`会导致打v0.2.2 tag的时候，没有包含v0.2.2的`CHANGELOG.md`的变更，比如[v0.1.1](https://github.com/yyssc/ssc-formula2/releases/tag/v0.1.1)中的`CHANGELOG.md`就是空的
 
 [package-url]: https://npmjs.org/package/ssc-formula2
 [npm-version-svg]: http://versionbadg.es/yyssc/ssc-formula2.svg
