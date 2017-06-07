@@ -64,10 +64,15 @@ import 'rc-tree/assets/index.css';
 
 ## MAINTAINING.md
 
+How to publish to npm
+
 ```
-npm version patch
-npm publish
+npm version patch --force
 ```
+
+PS:如果直接使用`npm publish`虽然会发布到npm上，但是不会在git中打tag
+
+TODO 如何发布v0.1.0第一版？
 
 [package-url]: https://npmjs.org/package/ssc-formula2
 [npm-version-svg]: http://versionbadg.es/yyssc/ssc-formula2.svg
