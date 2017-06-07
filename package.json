@@ -1,7 +1,7 @@
 {
   "name": "ssc-formula2",
   "version": "0.1.0",
-  "description": "A responsive and accessible date range picker component built with React",
+  "description": "A formula component built with React",
   "main": "index.js",
   "scripts": {
     "build": "npm run clean && npm run build:js && npm run build:css && npm run build:svg",
