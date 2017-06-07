@@ -10,7 +10,7 @@ module.exports = (config) => {
 
     files: [
       'test/_helpers/restoreSinonStubs.js',
-      'test/utils/*',
+      // 'test/utils/*',
       'test/components/*',
     ],
 
