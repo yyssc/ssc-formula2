@@ -14,6 +14,7 @@ const Formula = require('./lib/components/Formula').default;
 // var DateRangePickerShape = require('./lib/shapes/DateRangePickerShape').default;
 // var SingleDatePickerShape = require('./lib/shapes/SingleDatePickerShape').default;
 const treeDataShape = require('./lib/shapes/treeDataShape').default;
+const 档案转换ItemShape = require('./lib/shapes/档案转换ItemsShape').default;
 
 // var isInclusivelyAfterDay = require('./lib/utils/isInclusivelyAfterDay').default;
 // var isInclusivelyBeforeDay = require('./lib/utils/isInclusivelyBeforeDay').default;
@@ -42,6 +43,7 @@ module.exports = {
   // DateRangePickerShape: DateRangePickerShape,
   // SingleDatePickerShape: SingleDatePickerShape,
   treeDataShape,
+  档案转换ItemShape,
 
   // isInclusivelyAfterDay: isInclusivelyAfterDay,
   // isInclusivelyBeforeDay: isInclusivelyBeforeDay,
