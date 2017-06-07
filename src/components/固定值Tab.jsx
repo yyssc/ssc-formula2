@@ -18,9 +18,6 @@ export default class 固定值Tab extends React.Component {
   constructor(props) {
     super(props);
     this.referDataUrl = 'http://127.0.0.1:3009/refbase_ctr/queryRefJSON';
-
-    this.handle档案Change = this.handle档案Change.bind(this);
-    this.handle档案值Change = this.handle档案值Change.bind(this);
   }
 
   componentDidMount() {
@@ -58,12 +55,6 @@ export default class 固定值Tab extends React.Component {
   componentDidUpdate() {
   }
 
-  handle档案Change() {
-  }
-
-  handle档案值Change() {
-  }
-
   render() {
     const referConditions = {
       refCode: this.props.refCode,
@@ -76,7 +67,7 @@ export default class 固定值Tab extends React.Component {
         <Refers
           emptyLabel={''}
           labelKey="name"
-          onChange={this.handle档案Change}
+          onChange={() => {}}
           placeholder="请选择..."
           referConditions={referConditions}
           referDataUrl={this.referDataUrl}
@@ -87,7 +78,7 @@ export default class 固定值Tab extends React.Component {
         <Refers
           emptyLabel={''}
           labelKey="name"
-          onChange={this.handle档案值Change}
+          onChange={() => {}}
           placeholder="请选择..."
           referConditions={referConditions}
           referDataUrl={this.referDataUrl}
