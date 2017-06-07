@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 import Tree, { TreeNode } from 'rc-tree';
-import 'rc-tree/assets/index.css';
 
 import treeDataShape from '../shapes/treeDataShape';
 

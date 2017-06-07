@@ -4,6 +4,8 @@ import { configure, addDecorator, setAddon } from '@kadira/storybook';
 import infoAddon from '@kadira/react-storybook-addon-info';
 import { setOptions } from '@kadira/storybook-addon-options';
 import { withKnobs } from '@kadira/storybook-addon-knobs';
+// styles for rc-tree
+import 'rc-tree/assets/index.css';
 import '../css/styles.scss';
 
 addDecorator((story) => {

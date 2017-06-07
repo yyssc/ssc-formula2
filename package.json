@@ -89,6 +89,7 @@
     "node-sass": "^4.5.3",
     "nyc": "^10.3.2",
     "raw-loader": "^0.5.1",
+    "rc-tree": "^1.5.0",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",
@@ -111,13 +112,13 @@
     "object.assign": "^4.0.4",
     "object.values": "^1.0.4",
     "prop-types": "^15.5.10",
-    "rc-tree": "^1.5.0",
     "react-bootstrap": "^0.31.0",
     "react-moment-proptypes": "^1.4.0",
     "react-portal": "^3.1.0"
   },
   "peerDependencies": {
     "moment": "^2.18.1",
+    "rc-tree": "^1.5.0",
     "react": ">=0.14",
     "react-dom": ">=0.14",
     "ssc-refer2": "^0.1.35"
