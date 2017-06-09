@@ -2,12 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 import { FormGroup, FormControl } from 'react-bootstrap';
-
-const ReferListShape = PropTypes.arrayOf(PropTypes.shape({
-  id: PropTypes.string.isRequired,
-  code: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-}));
+import ReferListShape from '../shapes/ReferListShape';
 
 const propTypes = forbidExtraProps({
   items: ReferListShape,
@@ -66,9 +61,9 @@ export default class ReferList extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({
-      value: event.target.value,
-    });
+    const { value } = event.target;
+    this.setState({ value });
+    this.props.onChange(value);
   }
 
   render() {
