@@ -73,6 +73,7 @@ function loadStories() {
   require('../stories/SearchBox');
   require('../stories/SelectList');
   require('../stories/DetailBox');
+  require('../stories/ReferList');
   // containers
   require('../stories/Formula');
   require('../stories/FormulaTabs');
