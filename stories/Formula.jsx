@@ -8,7 +8,7 @@ import 档案转换ItemsData from './档案转换Data';
 
 const 单据字段TreeData = json;
 
-storiesOf('Formula', module)
+storiesOf('Formula (公式编辑器)', module)
   .addWithInfo('default', () => (
     <Formula
       单据字段TreeData={单据字段TreeData}

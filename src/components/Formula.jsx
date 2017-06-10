@@ -8,6 +8,7 @@ import treeDataShape from '../shapes/treeDataShape';
 import 档案转换ItemsShape from '../shapes/档案转换ItemsShape';
 
 const propTypes = forbidExtraProps({
+  onChange: PropTypes.func,
   onSubmit: PropTypes.func,
   value: PropTypes.string,
   /**
@@ -25,6 +26,7 @@ const propTypes = forbidExtraProps({
 });
 
 export const defaultProps = {
+  onChange: () => {},
   onSubmit: () => {},
   value: '',
 };
@@ -38,6 +40,7 @@ export default class Formula extends React.Component {
       value: props.value,
     };
 
+    this.handle档案值ReferChange = this.handle档案值ReferChange.bind(this);
     this.handle单据字段TreeSelect = this.handle单据字段TreeSelect.bind(this);
   }
 
@@ -81,23 +84,37 @@ export default class Formula extends React.Component {
   componentDidUpdate() {
   }
 
+  /**
+   * 固定值tab页中的档案值发生改变的回调
+   * @param {any} selected
+   * @memberof Formula
+   */
+  handle档案值ReferChange(selected) {
+    if (selected && selected.length > 0) {
+      const selectedItem = selected[0];
+      const refCode = this.props.refCode;
+      this.textBoxRef.insertText(`getID("${refCode}","${selectedItem.name}","${selectedItem.id}") `);
+    }
+  }
+
   handle单据字段TreeSelect(treeNodeObj) {
-    this.setState({
-      value: `${this.state.value} ${treeNodeObj.props.code}`,
-    });
+    this.textBoxRef.insertText(` ${treeNodeObj.props.code} `);
   }
 
   render() {
     return (
       <div>
         <TextBox
+          ref={(c) => { this.textBoxRef = c; }}
           value={this.state.value}
+          onChange={this.props.onChange}
           onSubmit={this.props.onSubmit}
         />
         <FormuaTabs
           单据字段TreeData={this.props.单据字段TreeData}
           固定值ReferDataUrl={this.props.固定值ReferDataUrl}
           档案转换ItemsData={this.props.档案转换ItemsData}
+          on档案值ReferChange={this.handle档案值ReferChange}
           on单据字段TreeSelect={this.handle单据字段TreeSelect}
         />
       </div>

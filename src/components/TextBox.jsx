@@ -4,16 +4,28 @@ import { forbidExtraProps } from 'airbnb-prop-types';
 import { Grid, Row, Col, FormGroup, FormControl, Button, ButtonToolbar } from 'react-bootstrap';
 
 const propTypes = forbidExtraProps({
+  onChange: PropTypes.func,
   onSubmit: PropTypes.func,
   value: PropTypes.string,
 });
 
 export const defaultProps = {
+  onChange: () => {},
   onSubmit: () => {},
   value: '',
 };
 
-
+/**
+ * 文本框组件
+ * 根据官网https://facebook.github.io/react/docs/refs-and-the-dom.html#when-to-use-refs
+ * 本组件由于需要在textarea中进行selection操作，所以大量使用了Ref
+ * Ref提供的方法：
+ * - insertText
+ * TODO 搜索一下google:"react editor"找到更高级的编辑器
+ * @export
+ * @class TextBox
+ * @extends {React.Component}
+ */
 export default class TextBox extends React.Component {
   constructor(props) {
     super(props);
@@ -22,18 +34,13 @@ export default class TextBox extends React.Component {
     this.state = {
       value: props.value,
     };
-
-    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
   }
 
   /**
-   *
-   *
    * @param {any} nextProps
-   *
    * @memberof TextBox
    */
   componentWillReceiveProps(nextProps) {
@@ -66,10 +73,41 @@ export default class TextBox extends React.Component {
   componentDidUpdate() {
   }
 
-  handleChange(event) {
-    this.setState({
-      value: event.target.value,
-    });
+  /**
+   * 往文本框中插入文字
+   * 直接从ssc-formula复制过来，没有仔细看其中的实现
+   * 注意：本方法不会触发FormControl::onChange回调
+   * @param {any} str
+   * @memberof TextBox
+   */
+  insertText(str) {
+    const textarea = this.textareaRef;
+    if (document.selection) {
+      const sel = document.selection.createRange();
+      sel.text = str;
+    } else if (typeof textarea.selectionStart === 'number' && typeof textarea.selectionEnd === 'number') {
+      const startPos = textarea.selectionStart;
+      const endPos = textarea.selectionEnd;
+      let cursorPos = startPos;
+      const tmpStr = textarea.value;
+      textarea.value = tmpStr.substring(0, startPos) + str +
+        tmpStr.substring(endPos, tmpStr.length);
+      cursorPos += str.length;
+      textarea.selectionStart = cursorPos;
+      textarea.selectionEnd = cursorPos;
+    } else {
+      textarea.value += str;
+    }
+    this.handleChange(textarea.value);
+  }
+
+  clearText() {
+    this.handleChange('');
+  }
+
+  handleChange(value) {
+    this.setState({ value });
+    this.props.onChange(value);
   }
 
   render() {
@@ -82,14 +120,15 @@ export default class TextBox extends React.Component {
           <Row style={{ display: 'flex', flexWrap: 'wrap' }}>
             <Col xs={10} md={10}>
               <FormGroup controlId="formControlsTextarea" style={{ height: '100%' }}>
-                {/* <ControlLabel>Textarea</ControlLabel>*/}
                 <FormControl
                   style={{ height: '100%' }}
+                  inputRef={(c) => { this.textareaRef = c; }}
                   componentClass="textarea"
-                  inputRef={(c) => { this.textarea = c; }}
                   placeholder={this.placeholder}
                   value={this.state.value}
-                  onChange={this.handleChange}
+                  onChange={(event) => {
+                    this.handleChange(event.target.value);
+                  }}
                 />
               </FormGroup>
             </Col>
@@ -98,7 +137,7 @@ export default class TextBox extends React.Component {
                 <Button
                   block
                   onClick={() => {
-                    this.props.onSubmit(this.state.value);
+                    this.props.onSubmit(this.textareaRef.value);
                   }}
                 >确定</Button>
                 <Button
@@ -112,15 +151,13 @@ export default class TextBox extends React.Component {
                 <Button
                   block
                   onClick={() => {
-                    this.textarea.select();
+                    this.textareaRef.select();
                   }}
                 >全选</Button>
                 <Button
                   block
                   onClick={() => {
-                    this.setState({
-                      value: '',
-                    });
+                    this.clearText();
                   }}
                 >清空</Button>
               </ButtonToolbar>

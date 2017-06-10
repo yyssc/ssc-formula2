@@ -12,6 +12,7 @@ import treeDataShape from '../shapes/treeDataShape';
 import 档案转换ItemsShape from '../shapes/档案转换ItemsShape';
 
 const propTypes = forbidExtraProps({
+  on档案值ReferChange: PropTypes.func.isRequired,
   on单据字段TreeSelect: PropTypes.func,
   /**
    * 单据字段标签页中的树的数据
@@ -86,6 +87,7 @@ export default class FormulaTabs extends React.Component {
           <Tab eventKey={'固定值'} title="固定值">
             <固定值Tab
               referDataUrl={this.props.固定值ReferDataUrl}
+              on档案值ReferChange={this.props.on档案值ReferChange}
             />
           </Tab>
           <Tab eventKey={'档案转换'} title="档案转换">
