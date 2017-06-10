@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 
 import SearchBox from './SearchBox';
@@ -9,6 +10,7 @@ import 档案转换ItemsShape from '../shapes/档案转换ItemsShape';
 
 const propTypes = forbidExtraProps({
   items: 档案转换ItemsShape.isRequired,
+  onSelect: PropTypes.func.isRequired,
 });
 
 export const defaultProps = {
@@ -141,6 +143,7 @@ export default class 档案转换Tab extends React.Component {
         <SelectList
           activeKey={this.getSelectedItemId()}
           items={this.props.items}
+          onSelect={this.props.onSelect}
         />
         <DetailBox
           text={'展示详细信息...'}

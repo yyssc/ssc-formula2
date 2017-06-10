@@ -42,6 +42,7 @@ export default class Formula extends React.Component {
 
     this.handle档案值ReferChange = this.handle档案值ReferChange.bind(this);
     this.handle单据字段TreeSelect = this.handle单据字段TreeSelect.bind(this);
+    this.handle档案转换ListSelect = this.handle档案转换ListSelect.bind(this);
   }
 
   componentDidMount() {
@@ -101,6 +102,31 @@ export default class Formula extends React.Component {
     this.textBoxRef.insertText(` ${treeNodeObj.props.code} `);
   }
 
+  /**
+   * 郭老师给的结果拼接规则
+   * ```
+   * cmapping("这里拼code / name","这里拼id",这里拼classtype1对应的单据项目,这里拼classtype2对应的单据项目,有几个classtype就拼几个)
+   * ```
+   * @param {any} o
+   * @memberof Formula
+   */
+  handle档案转换ListSelect(itemObj) {
+    const arg1 = `${itemObj.code} / ${itemObj.name}`;
+    const arg2 = `${itemObj.id}`;
+    const arg3 = [];
+    Object.keys(itemObj).forEach((key) => {
+      // key需要是classtype加数字的形式
+      if (/^classtype\d$/.exec(key) !== null) {
+        // 有可能是null
+        if (itemObj[key] !== null) {
+          // 需要跟郭老师确认是否使用code就可以了
+          arg3.push(itemObj[key].code);
+        }
+      }
+    });
+    this.textBoxRef.insertText(`cmapping("${arg1}","${arg2}","${arg3.join(',')}")`);
+  }
+
   render() {
     return (
       <div>
@@ -116,6 +142,7 @@ export default class Formula extends React.Component {
           档案转换ItemsData={this.props.档案转换ItemsData}
           on档案值ReferChange={this.handle档案值ReferChange}
           on单据字段TreeSelect={this.handle单据字段TreeSelect}
+          on档案转换ListSelect={this.handle档案转换ListSelect}
         />
       </div>
     );

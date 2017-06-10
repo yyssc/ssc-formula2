@@ -7,7 +7,11 @@ import 档案转换ItemsShape from '../shapes/档案转换ItemsShape';
 
 const propTypes = forbidExtraProps({
   activeKey: PropTypes.string,
+  /**
+   * [{ id:'', code:'', name: '' }]
+   */
   items: 档案转换ItemsShape.isRequired,
+  onSelect: PropTypes.func.isRequired,
 });
 
 export const defaultProps = {
@@ -66,10 +70,15 @@ export default class SelectList extends React.Component {
   componentDidUpdate() {
   }
 
+  getItemById(id) {
+    return this.props.items.find(item => item.id === id);
+  }
+
   handleSelect(eventKey) {
     this.setState({
       activeKey: eventKey,
     });
+    this.props.onSelect(this.getItemById(eventKey));
   }
 
   render() {

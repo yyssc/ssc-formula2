@@ -17,5 +17,6 @@ storiesOf('FormulaTabs', module)
       on单据字段TreeSelect={(o) => {
         console.log('FormulaTabs::on单据字段TreeSelect', o);
       }}
+      on档案转换ListSelect={action('FormulaTabs::on档案转换ListSelect')}
     />
   ));
