@@ -1,5 +1,10 @@
 # Change Log
 
+## v0.1.2
+
+- [new] Update TextBox value according to "单据字段" or "档案转换" selected items
+- [fix] make textbox auto height
+
 ## v0.1.1
 - [fix] Remove peer denpendency `react-addons-shallow-compare` ([#2](https://github.com/yyssc/ssc-formula2/issues/2))
 - [new] Export `档案转换ItemsShape` ([#3](https://github.com/yyssc/ssc-formula2/issues/3))
