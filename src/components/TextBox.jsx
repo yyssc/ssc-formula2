@@ -73,14 +73,18 @@ export default class TextBox extends React.Component {
   }
 
   render() {
+    // 让输入框高度自动
+    // How can I make Bootstrap columns all the same height?
+    // https://stackoverflow.com/a/22892773/4685522
     return (
       <div>
         <Grid fluid>
-          <Row>
+          <Row style={{ display: 'flex', flexWrap: 'wrap' }}>
             <Col xs={10} md={10}>
-              <FormGroup controlId="formControlsTextarea">
+              <FormGroup controlId="formControlsTextarea" style={{ height: '100%' }}>
                 {/* <ControlLabel>Textarea</ControlLabel>*/}
                 <FormControl
+                  style={{ height: '100%' }}
                   componentClass="textarea"
                   inputRef={(c) => { this.textarea = c; }}
                   placeholder={this.placeholder}
