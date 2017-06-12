@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.3
+
+- [fix] Fix building error in UglifyJs ([#7](https://github.com/yyssc/ssc-formula2/issues/7))
+
 ## v0.1.2
 
 - [new] Update TextBox value according to "单据字段" or "档案转换" selected items
