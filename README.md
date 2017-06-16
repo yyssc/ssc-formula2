@@ -66,6 +66,12 @@ import 'rc-tree/assets/index.css';
 
 How to update from v0.2.1 to v0.2.2, and publish to npm
 
+run test
+
+```
+npm run test
+```
+
 Modify `CHANGELOG.md` to add information for v0.2.2
 
 ```
