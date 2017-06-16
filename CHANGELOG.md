@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.5
+
+- [fix] Add prop 固定值档案值refCode for Formula component
+
 ## v0.1.4
 
 - [new] 临时方案，由外面传进来档案值refCode
