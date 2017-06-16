@@ -23,12 +23,14 @@ const propTypes = forbidExtraProps({
    * 档案转换标签页中的树的数据
    */
   档案转换ItemsData: 档案转换ItemsShape.isRequired,
+  固定值档案值RefCode: PropTypes.string,
 });
 
 export const defaultProps = {
   onChange: () => {},
   onSubmit: () => {},
   value: '',
+  固定值档案值RefCode: null,
 };
 
 
@@ -140,6 +142,7 @@ export default class Formula extends React.Component {
           单据字段TreeData={this.props.单据字段TreeData}
           固定值ReferDataUrl={this.props.固定值ReferDataUrl}
           档案转换ItemsData={this.props.档案转换ItemsData}
+          固定值档案值RefCode={this.props.固定值档案值RefCode}
           on档案值ReferChange={this.handle档案值ReferChange}
           on单据字段TreeSelect={this.handle单据字段TreeSelect}
           on档案转换ListSelect={this.handle档案转换ListSelect}

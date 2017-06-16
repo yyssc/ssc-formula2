@@ -14,6 +14,7 @@ storiesOf('Formula (公式编辑器)', module)
       单据字段TreeData={单据字段TreeData}
       固定值ReferDataUrl="http://127.0.0.1:3009/refbase_ctr/queryRefJSON"
       档案转换ItemsData={档案转换ItemsData}
+      固定值档案值RefCode="entity"
       onSubmit={action('Formula::onSubmit')}
     />
   ))
