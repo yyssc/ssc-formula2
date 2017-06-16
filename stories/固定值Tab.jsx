@@ -10,4 +10,11 @@ storiesOf('固定值Tab', module)
       referDataUrl="http://127.0.0.1:3009/refbase_ctr/queryRefJSON"
       on档案值ReferChange={action('固定值Tab::on档案值ReferChange')}
     />
+  ))
+  .addWithInfo('初始refCode', () => (
+    <固定值Tab
+      referDataUrl="http://127.0.0.1:3009/refbase_ctr/queryRefJSON"
+      on档案值ReferChange={action('固定值Tab::on档案值ReferChange')}
+      档案值RefCode="entity"
+    />
   ));

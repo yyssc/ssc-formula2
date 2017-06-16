@@ -19,9 +19,14 @@ const propTypes = forbidExtraProps({
    * http://127.0.0.1:3009/refbase_ctr/queryRefJSON
    */
   referDataUrl: PropTypes.string.isRequired,
+  /**
+   * 临时方案，由外面传进来
+   */
+  档案值RefCode: PropTypes.string,
 });
 
 export const defaultProps = {
+  档案值RefCode: null,
 };
 
 export default class 固定值Tab extends React.Component {
@@ -29,7 +34,7 @@ export default class 固定值Tab extends React.Component {
     super(props);
 
     this.state = {
-      档案值RefCode: null,
+      档案值RefCode: props.档案值RefCode, // null,
     };
 
     this.handle档案ReferChange = this.handle档案ReferChange.bind(this);
@@ -86,14 +91,32 @@ export default class 固定值Tab extends React.Component {
     const 档案ReferConditions = {
       refCode: 档案RefCode,
       refType: 'table',
-      displayFields: ['code', 'name', 'email'],
-      convertcol: '{name:displayName}',
+      fields: [
+        'id',
+        'displayName',
+        'entityName',
+        'entityType',
+        'fullClassName',
+        'mainTableName',
+      ],
+      displayFields: ['id', 'entityName', 'displayName'],
+      convertcol: '{code:entityName,name:displayName}',
     };
     const 档案值ReferConditions = {
       refCode: this.state.档案值RefCode,
       refType: 'table',
       displayFields: ['code', 'name', 'email'],
     };
+    // http://git.yonyou.com/sscplatform/FC/issues/55
+    // 郭老师说对于参照实体的应该特殊处理
+    // 赵老师给出了特殊处理的方法就是添加`convertcol`参数
+    if (this.state.档案值RefCode === 'entity') {
+      档案值ReferConditions.convertcol = '{name:displayName}';
+      // http://git.yonyou.com/sscplatform/FC/issues/55#note_53358
+      // 按照赵老师说的，还需要添加几个参数
+      档案值ReferConditions.fields = ['id', 'entityName', 'displayName'];
+      档案值ReferConditions.displayFields = ['id', 'displayName'];
+    }
     return (
       <div>
         档案
@@ -118,6 +141,12 @@ export default class 固定值Tab extends React.Component {
           referType="list"
           defaultSelected={[]}
           disabled={this.state.档案值RefCode === null}
+          renderMenuItemChildren={option => (
+            <div>
+              <span>{option.code}{option.name}</span>
+            </div>
+          )}
+          filterBy={['name', 'code']}
         />
       </div>
     );
