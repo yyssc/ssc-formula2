@@ -89,14 +89,16 @@ export default class Formula extends React.Component {
 
   /**
    * 固定值tab页中的档案值发生改变的回调
+   * TODO 不应该将固定值tab页中的参照返回的值直接往上返到这里
+   * 应该在固定值tab中处理好了再往上返
    * @param {any} selected
    * @memberof Formula
    */
   handle档案值ReferChange(selected) {
     if (selected && selected.length > 0) {
       const selectedItem = selected[0];
-      const refCode = this.props.refCode;
-      this.textBoxRef.insertText(`getID("${refCode}","${selectedItem.name}","${selectedItem.id}") `);
+      const 固定值档案值RefCode = this.props.固定值档案值RefCode;
+      this.textBoxRef.insertText(`getID("${固定值档案值RefCode}","${selectedItem.name}","${selectedItem.id}") `);
     }
   }
 
