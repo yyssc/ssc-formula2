@@ -71,7 +71,7 @@ export default class FormulaTree extends React.Component {
   }
 
   onExpand(expandedKeys) {
-    console.log('onExpand', expandedKeys);
+    // console.log('onExpand', expandedKeys);
     // if not set autoExpandParent to false, if children expanded, parent can not collapse.
     // or, you can remove all expanded chilren keys.
     this.setState({
@@ -81,7 +81,7 @@ export default class FormulaTree extends React.Component {
   }
 
   onSelect(selectedKeys, info) {
-    console.log('onSelect', selectedKeys, info);
+    // console.log('onSelect', selectedKeys, info);
     this.setState({
       selectedKeys,
     });

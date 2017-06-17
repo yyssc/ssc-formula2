@@ -128,7 +128,7 @@ export default class 单据字段Tab extends React.Component {
    * @memberof 单据字段Tab
    */
   handleSearchBoxChange(searchText) {
-    console.log('search', this.search(searchText));
+    // console.log('search', this.search(searchText));
     this.setState({
       matchResults: this.search(searchText),
     });
