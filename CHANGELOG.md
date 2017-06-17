@@ -3,6 +3,7 @@
 ## v0.1.6
 
 - [fix] 解决固定值Tab中档案值参照出现undefined问题 ([#8](https://github.com/yyssc/ssc-formula2/issues/8))
+- [new] 档案转换tab页中选中一个item时候显示详细信息 ([#9](https://github.com/yyssc/ssc-formula2/issues/9))
 
 ## v0.1.5
 
