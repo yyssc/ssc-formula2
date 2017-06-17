@@ -7,11 +7,11 @@ import DetailBox from '../src/components/DetailBox';
 storiesOf('DetailBox', module)
   .addWithInfo('default', () => (
     <DetailBox
-      text={'some text...'}
+      details={['some text...']}
     />
   ))
   .addWithInfo('update text prop', () => (
     <DetailBox
-      text={text('DetailBox.props.text', 'change text...')}
+      details={[text('DetailBox.props.text', 'change text...')]}
     />
   ));

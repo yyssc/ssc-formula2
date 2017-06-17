@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.6
+
+- [fix] 解决固定值Tab中档案值参照出现undefined问题 ([#8](https://github.com/yyssc/ssc-formula2/issues/8))
+
 ## v0.1.5
 
 - [fix] Add prop 固定值档案值refCode for Formula component

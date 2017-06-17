@@ -11,6 +11,17 @@ const propTypes = forbidExtraProps({
    * [{ id:'', code:'', name: '' }]
    */
   items: 档案转换ItemsShape.isRequired,
+  /**
+   * 参数1： itemObj，比如
+   * ```js
+   * {
+   *   id: '',
+   *   code: '',
+   *   name: '',
+   *   classtype1: {},
+   * }
+   * ```
+   */
   onSelect: PropTypes.func.isRequired,
 });
 

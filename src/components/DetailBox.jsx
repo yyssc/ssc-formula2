@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 
 const propTypes = forbidExtraProps({
-  text: PropTypes.string,
+  details: PropTypes.arrayOf(PropTypes.string),
 });
 
 export const defaultProps = {
-  text: '',
+  details: [],
 };
 
 export default class DetailBox extends React.Component {
@@ -54,7 +54,11 @@ export default class DetailBox extends React.Component {
     return (
       <div>
         <hr />
-        <p>{this.props.text}</p>
+        {
+          this.props.details.map(detail => (
+            <p key={detail}>{detail}</p>
+          ))
+        }
       </div>
     );
   }

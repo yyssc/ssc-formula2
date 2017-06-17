@@ -148,7 +148,7 @@ export default class 单据字段Tab extends React.Component {
           onSelect={this.props.onTreeSelect}
         />
         <DetailBox
-          text={'展示详细信息...'}
+          text={['展示详细信息...']}
         />
       </div>
     );

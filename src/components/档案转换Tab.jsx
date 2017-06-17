@@ -24,10 +24,12 @@ export default class 档案转换Tab extends React.Component {
     this.state = {
       currentSelectedIndex: 0,
       matchResults: [],
+      details: [],
     };
 
     this.handleFindNext = this.handleFindNext.bind(this);
     this.handleSearchBoxChange = this.handleSearchBoxChange.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
   componentDidMount() {
@@ -133,6 +135,32 @@ export default class 档案转换Tab extends React.Component {
     this.resetIndex();
   }
 
+  /**
+   * 更新DetailBox组件内容
+   * @param {any} selectedItemObj
+   * @memberof 档案转换Tab
+   */
+  updateDetailBox(selectedItemObj) {
+    const newDetails = [];
+    let index = 1;
+    let classType;
+    for (; index < 99; index += 1) {
+      classType = selectedItemObj[`classtype${index}`];
+      if (selectedItemObj[`classtype${index}`] === null) {
+        break;
+      }
+      newDetails.push(classType.name);
+    }
+    this.setState({
+      details: newDetails,
+    });
+  }
+
+  handleSelect(selectedItemObj) {
+    this.updateDetailBox(selectedItemObj);
+    this.props.onSelect(selectedItemObj);
+  }
+
   render() {
     return (
       <div>
@@ -143,10 +171,10 @@ export default class 档案转换Tab extends React.Component {
         <SelectList
           activeKey={this.getSelectedItemId()}
           items={this.props.items}
-          onSelect={this.props.onSelect}
+          onSelect={this.handleSelect}
         />
         <DetailBox
-          text={'展示详细信息...'}
+          details={this.state.details}
         />
       </div>
     );
