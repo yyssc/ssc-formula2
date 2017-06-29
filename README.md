@@ -62,26 +62,6 @@ import 'rc-tree/assets/index.css';
       - [Refers]
     - 档案转换Tab
 
-## MAINTAINING.md
-
-How to update from v0.2.1 to v0.2.2, and publish to npm
-
-run test
-
-```
-npm run test
-```
-
-Modify `CHANGELOG.md` to add information for v0.2.2
-
-```
-npm run version:patch
-```
-
-PS:如果直接使用`npm publish`虽然会发布到npm上，但是不会在git中打tag
-
-TODO 如何发布v0.1.0第一版？
-
 [package-url]: https://npmjs.org/package/ssc-formula2
 [npm-version-svg]: http://versionbadg.es/yyssc/ssc-formula2.svg
 [travis-svg]: https://travis-ci.org/yyssc/ssc-formula2.svg
