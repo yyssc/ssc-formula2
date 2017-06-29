@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf, action } from '@kadira/storybook';
 import { text } from '@kadira/storybook-addon-knobs';
 
 import FormulaTree from '../src/components/FormulaTree';
@@ -14,11 +14,7 @@ storiesOf('FormulaTree', module)
   .addWithInfo('onSelect', () => (
     <FormulaTree
       treeData={json}
-      // onSelect={action('ttt')}
-      onSelect={(o) => {
-        // 使用action会导致浏览器卡死...
-        console.log(o);
-      }}
+      onSelect={action('FormulaTree::onSelect')}
     />
   ))
   .addWithInfo('update prop selectedKey', () => (

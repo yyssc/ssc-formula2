@@ -7,12 +7,187 @@ const json = [
     "infoKey": "",
     "children": [
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "补贴",
         "key": "G001ZM0000BASE000DEF00000ATT00000002",
-        "isLeaf": true,
+        "isLeaf": false,
         "infoKey": "",
-        "children": null,
+        "children": [
+          {
+            "parentKey": "G001ZM0000BASE000DEF00000ATT00000002",
+            "title": "补助金额标准",
+            "key": "G001ZM0000BASE000DEF00000ATT00000045",
+            "isLeaf": true,
+            "infoKey": null,
+            "children": null,
+            "data": {
+              "id": "G001ZM0000BASE000DEF00000ATT00000045",
+              "tableName": null,
+              "propertyName": "subsidyUnits",
+              "displayName": "补助金额标准",
+              "columnName": "subsidyUnits",
+              "maxLength": 50,
+              "numberDigit": null,
+              "isExtend": false,
+              "isSyncDB": true,
+              "assemblyType": 10,
+              "dataType": 4,
+              "dataTypeInfo": null,
+              "refEntity": null,
+              "refEntityCode": null,
+              "nullable": true,
+              "defaultvalue": null,
+              "hidden": null
+            },
+            "code": "subsidyUnits",
+            "name": "补助金额标准"
+          },
+          {
+            "parentKey": "G001ZM0000BASE000DEF00000ATT00000002",
+            "title": "补助天数",
+            "key": "G001ZM0000BASE000DEF00000ATT00000046",
+            "isLeaf": true,
+            "infoKey": null,
+            "children": null,
+            "data": {
+              "id": "G001ZM0000BASE000DEF00000ATT00000046",
+              "tableName": null,
+              "propertyName": "subsidyDays",
+              "displayName": "补助天数",
+              "columnName": "subsidyDays",
+              "maxLength": 50,
+              "numberDigit": null,
+              "isExtend": false,
+              "isSyncDB": true,
+              "assemblyType": 10,
+              "dataType": 4,
+              "dataTypeInfo": null,
+              "refEntity": null,
+              "refEntityCode": null,
+              "nullable": true,
+              "defaultvalue": null,
+              "hidden": null
+            },
+            "code": "subsidyDays",
+            "name": "补助天数"
+          },
+          {
+            "parentKey": "G001ZM0000BASE000DEF00000ATT00000002",
+            "title": "补助PK",
+            "key": "G001ZM0000BASE000DEF00000ATT00000047",
+            "isLeaf": true,
+            "infoKey": null,
+            "children": null,
+            "data": {
+              "id": "G001ZM0000BASE000DEF00000ATT00000047",
+              "tableName": null,
+              "propertyName": "subsidy_pk",
+              "displayName": "补助PK",
+              "columnName": "subsidy_pk",
+              "maxLength": 50,
+              "numberDigit": null,
+              "isExtend": false,
+              "isSyncDB": true,
+              "assemblyType": 10,
+              "dataType": 6,
+              "dataTypeInfo": null,
+              "refEntity": null,
+              "refEntityCode": null,
+              "nullable": true,
+              "defaultvalue": null,
+              "hidden": null
+            },
+            "code": "subsidy_pk",
+            "name": "补助PK"
+          },
+          {
+            "parentKey": "G001ZM0000BASE000DEF00000ATT00000002",
+            "title": "补助关联的单据PK",
+            "key": "G001ZM0000BASE000DEF00000ATT00000048",
+            "isLeaf": true,
+            "infoKey": null,
+            "children": null,
+            "data": {
+              "id": "G001ZM0000BASE000DEF00000ATT00000048",
+              "tableName": null,
+              "propertyName": "expense_pk",
+              "displayName": "补助关联的单据PK",
+              "columnName": "expense_pk",
+              "maxLength": 50,
+              "numberDigit": null,
+              "isExtend": false,
+              "isSyncDB": true,
+              "assemblyType": 10,
+              "dataType": 6,
+              "dataTypeInfo": null,
+              "refEntity": null,
+              "refEntityCode": null,
+              "nullable": true,
+              "defaultvalue": null,
+              "hidden": null
+            },
+            "code": "expense_pk",
+            "name": "补助关联的单据PK"
+          },
+          {
+            "parentKey": "G001ZM0000BASE000DEF00000ATT00000002",
+            "title": "补助起始日期",
+            "key": "G001ZM0000BASE000DEF00000ATT00000049",
+            "isLeaf": true,
+            "infoKey": null,
+            "children": null,
+            "data": {
+              "id": "G001ZM0000BASE000DEF00000ATT00000049",
+              "tableName": null,
+              "propertyName": "startDate",
+              "displayName": "补助起始日期",
+              "columnName": "startDate",
+              "maxLength": 50,
+              "numberDigit": null,
+              "isExtend": false,
+              "isSyncDB": true,
+              "assemblyType": 10,
+              "dataType": 2,
+              "dataTypeInfo": null,
+              "refEntity": null,
+              "refEntityCode": null,
+              "nullable": true,
+              "defaultvalue": null,
+              "hidden": null
+            },
+            "code": "startDate",
+            "name": "补助起始日期"
+          },
+          {
+            "parentKey": "G001ZM0000BASE000DEF00000ATT00000002",
+            "title": "补助截止日期",
+            "key": "G001ZM0000BASE000DEF00000ATT00000050",
+            "isLeaf": true,
+            "infoKey": null,
+            "children": null,
+            "data": {
+              "id": "G001ZM0000BASE000DEF00000ATT00000050",
+              "tableName": null,
+              "propertyName": "endDate",
+              "displayName": "补助截止日期",
+              "columnName": "endDate",
+              "maxLength": 50,
+              "numberDigit": null,
+              "isExtend": false,
+              "isSyncDB": true,
+              "assemblyType": 10,
+              "dataType": 2,
+              "dataTypeInfo": null,
+              "refEntity": null,
+              "refEntityCode": null,
+              "nullable": true,
+              "defaultvalue": null,
+              "hidden": null
+            },
+            "code": "endDate",
+            "name": "补助截止日期"
+          }
+        ],
         "data": {
           "id": "G001ZM0000BASE000DEF00000ATT00000002",
           "tableName": "",
@@ -30,13 +205,13 @@ const json = [
           "refEntityCode": "",
           "nullable": true,
           "defaultvalue": "",
-          "hidden": false
+          "hidden": null
         },
         "code": "subsidy",
         "name": "补贴"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "单据类型主键",
         "key": "G001ZM0000BASE000DEF00000ATT00000004",
         "isLeaf": true,
@@ -59,13 +234,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "djlxpk",
         "name": "单据类型主键"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "是否支持分摊",
         "key": "G001ZM0000BASE000DEF00000ATT00000005",
         "isLeaf": true,
@@ -88,13 +263,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "costShared",
         "name": "是否支持分摊"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "关联申请单情景标签",
         "key": "G001ZM0000BASE000DEF00000ATT00000006",
         "isLeaf": true,
@@ -117,13 +292,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "requisition",
         "name": "关联申请单情景标签"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "关联申请单PK",
         "key": "G001ZM0000BASE000DEF00000ATT00000007",
         "isLeaf": true,
@@ -146,13 +321,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "requisitionKey",
         "name": "关联申请单PK"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "是否支持补贴",
         "key": "G001ZM0000BASE000DEF00000ATT00000008",
         "isLeaf": true,
@@ -175,13 +350,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "allowance",
         "name": "是否支持补贴"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "报账日期",
         "key": "G001ZM0000BASE000DEF00000ATT00000009",
         "isLeaf": true,
@@ -204,13 +379,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "expenseDate",
         "name": "报账日期"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "报账单PK",
         "key": "G001ZM0000BASE000DEF00000ATT00000010",
         "isLeaf": true,
@@ -233,13 +408,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "expensePk",
         "name": "报账单PK"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "对应NC报账单PK",
         "key": "G001ZM0000BASE000DEF00000ATT00000011",
         "isLeaf": true,
@@ -262,13 +437,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "billPk",
         "name": "对应NC报账单PK"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "单据状态",
         "key": "G001ZM0000BASE000DEF00000ATT00000012",
         "isLeaf": true,
@@ -291,13 +466,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "billStatus",
         "name": "单据状态"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "项目参照",
         "key": "G001ZM0000BASE000DEF00000ATT00000013",
         "isLeaf": true,
@@ -320,13 +495,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "zdyhead",
         "name": "项目参照"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "项目参照PK",
         "key": "G001ZM0000BASE000DEF00000ATT00000014",
         "isLeaf": true,
@@ -349,13 +524,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "zdyhead_pk",
         "name": "项目参照PK"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "项目参照NAME",
         "key": "G001ZM0000BASE000DEF00000ATT00000015",
         "isLeaf": true,
@@ -378,13 +553,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "zdyhead_value",
         "name": "项目参照NAME"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "单据类型名称",
         "key": "G001ZM0000BASE000DEF00000ATT00000016",
         "isLeaf": true,
@@ -407,13 +582,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "billtypeName",
         "name": "单据类型名称"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "单据类型名称",
         "key": "G001ZM0000BASE000DEF00000ATT00000017",
         "isLeaf": true,
@@ -436,13 +611,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "billtypeCode",
         "name": "单据类型名称"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "个人银行账户",
         "key": "G001ZM0000BASE000DEF00000ATT00000018",
         "isLeaf": true,
@@ -465,13 +640,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "bankAccount",
         "name": "个人银行账户"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "个人银行账户PK",
         "key": "G001ZM0000BASE000DEF00000ATT00000019",
         "isLeaf": true,
@@ -494,13 +669,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "bankAccount_pk",
         "name": "个人银行账户PK"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "个人银行账户NAME",
         "key": "G001ZM0000BASE000DEF00000ATT00000020",
         "isLeaf": true,
@@ -523,13 +698,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "bankAccount_value",
         "name": "个人银行账户NAME"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "个人银行账号",
         "key": "G001ZM0000BASE000DEF00000ATT00000021",
         "isLeaf": true,
@@ -552,13 +727,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "bankAccountKey",
         "name": "个人银行账号"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "个人银行账号PK",
         "key": "G001ZM0000BASE000DEF00000ATT00000022",
         "isLeaf": true,
@@ -581,13 +756,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "bankAccountKey_pk",
         "name": "个人银行账号PK"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "个人银行账号NAME",
         "key": "G001ZM0000BASE000DEF00000ATT00000023",
         "isLeaf": true,
@@ -610,13 +785,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "bankAccountKey_value",
         "name": "个人银行账号NAME"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "处理时间",
         "key": "G001ZM0000BASE000DEF00000ATT00000024",
         "isLeaf": true,
@@ -639,13 +814,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "dealdate",
         "name": "处理时间"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "单据事由",
         "key": "G001ZM0000BASE000DEF00000ATT00000025",
         "isLeaf": true,
@@ -668,13 +843,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "descript",
         "name": "单据事由"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "收支项目",
         "key": "G001ZM0000BASE000DEF00000ATT00000026",
         "isLeaf": true,
@@ -697,13 +872,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "szitemKey",
         "name": "收支项目"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "收支项目PK",
         "key": "G001ZM0000BASE000DEF00000ATT00000027",
         "isLeaf": true,
@@ -726,13 +901,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "szitemKey_pk",
         "name": "收支项目PK"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "收支项目NAME",
         "key": "G001ZM0000BASE000DEF00000ATT00000028",
         "isLeaf": true,
@@ -755,13 +930,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "szitemKey_value",
         "name": "收支项目NAME"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "自定义项1",
         "key": "G001ZM0000BASE000DEF00000ATT00000029",
         "isLeaf": true,
@@ -784,13 +959,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "defitem1",
         "name": "自定义项1"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "自定义项2",
         "key": "G001ZM0000BASE000DEF00000ATT00000030",
         "isLeaf": true,
@@ -813,13 +988,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "defitem2",
         "name": "自定义项2"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "自定义项3",
         "key": "G001ZM0000BASE000DEF00000ATT00000031",
         "isLeaf": true,
@@ -842,13 +1017,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "defitem3",
         "name": "自定义项3"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "自定义项4",
         "key": "G001ZM0000BASE000DEF00000ATT00000032",
         "isLeaf": true,
@@ -871,13 +1046,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "defitem4",
         "name": "自定义项4"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "自定义项5",
         "key": "G001ZM0000BASE000DEF00000ATT00000033",
         "isLeaf": true,
@@ -900,13 +1075,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "defitem5",
         "name": "自定义项5"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "自定义项6",
         "key": "G001ZM0000BASE000DEF00000ATT00000034",
         "isLeaf": true,
@@ -929,13 +1104,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "defitem6",
         "name": "自定义项6"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "自定义项7",
         "key": "G001ZM0000BASE000DEF00000ATT00000035",
         "isLeaf": true,
@@ -958,13 +1133,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "defitem7",
         "name": "自定义项7"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "自定义项8",
         "key": "G001ZM0000BASE000DEF00000ATT00000036",
         "isLeaf": true,
@@ -987,13 +1162,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "defitem8",
         "name": "自定义项8"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "自定义项9",
         "key": "G001ZM0000BASE000DEF00000ATT00000037",
         "isLeaf": true,
@@ -1016,13 +1191,13 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "defitem9",
         "name": "自定义项9"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "自定义项10",
         "key": "G001ZM0000BASE000DEF00000ATT00000038",
         "isLeaf": true,
@@ -1045,18 +1220,164 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "defitem10",
         "name": "自定义项10"
       },
       {
-        "parentKey": "fier_bxd",
+        "parentKey": "bx",
         "title": "表头其他信息",
         "key": "G001ZM0000BASE000DEF00000ATT00000039",
-        "isLeaf": true,
+        "isLeaf": false,
         "infoKey": "",
-        "children": null,
+        "children": [
+          {
+            "parentKey": "G001ZM0000BASE000DEF00000ATT00000039",
+            "title": "单据类型主键",
+            "key": "G001ZM0000BASE000DEF00000ATT00000040",
+            "isLeaf": true,
+            "infoKey": null,
+            "children": null,
+            "data": {
+              "id": "G001ZM0000BASE000DEF00000ATT00000040",
+              "tableName": null,
+              "propertyName": "djlxpk",
+              "displayName": "单据类型主键",
+              "columnName": "djlxpk",
+              "maxLength": 50,
+              "numberDigit": null,
+              "isExtend": false,
+              "isSyncDB": true,
+              "assemblyType": 10,
+              "dataType": 6,
+              "dataTypeInfo": null,
+              "refEntity": null,
+              "refEntityCode": null,
+              "nullable": true,
+              "defaultvalue": null,
+              "hidden": null
+            },
+            "code": "djlxpk",
+            "name": "单据类型主键"
+          },
+          {
+            "parentKey": "G001ZM0000BASE000DEF00000ATT00000039",
+            "title": "单据状态",
+            "key": "G001ZM0000BASE000DEF00000ATT00000041",
+            "isLeaf": true,
+            "infoKey": null,
+            "children": null,
+            "data": {
+              "id": "G001ZM0000BASE000DEF00000ATT00000041",
+              "tableName": null,
+              "propertyName": "billStatus",
+              "displayName": "单据状态",
+              "columnName": "billStatus",
+              "maxLength": 50,
+              "numberDigit": null,
+              "isExtend": false,
+              "isSyncDB": true,
+              "assemblyType": 10,
+              "dataType": 6,
+              "dataTypeInfo": null,
+              "refEntity": null,
+              "refEntityCode": null,
+              "nullable": true,
+              "defaultvalue": null,
+              "hidden": null
+            },
+            "code": "billStatus",
+            "name": "单据状态"
+          },
+          {
+            "parentKey": "G001ZM0000BASE000DEF00000ATT00000039",
+            "title": "单据类型名称",
+            "key": "G001ZM0000BASE000DEF00000ATT00000042",
+            "isLeaf": true,
+            "infoKey": null,
+            "children": null,
+            "data": {
+              "id": "G001ZM0000BASE000DEF00000ATT00000042",
+              "tableName": null,
+              "propertyName": "billitem",
+              "displayName": "单据类型名称",
+              "columnName": "billitem",
+              "maxLength": 50,
+              "numberDigit": null,
+              "isExtend": false,
+              "isSyncDB": true,
+              "assemblyType": 10,
+              "dataType": 6,
+              "dataTypeInfo": null,
+              "refEntity": null,
+              "refEntityCode": null,
+              "nullable": true,
+              "defaultvalue": null,
+              "hidden": null
+            },
+            "code": "billitem",
+            "name": "单据类型名称"
+          },
+          {
+            "parentKey": "G001ZM0000BASE000DEF00000ATT00000039",
+            "title": "单据类型查询关键词",
+            "key": "G001ZM0000BASE000DEF00000ATT00000043",
+            "isLeaf": true,
+            "infoKey": null,
+            "children": null,
+            "data": {
+              "id": "G001ZM0000BASE000DEF00000ATT00000043",
+              "tableName": null,
+              "propertyName": "dest_billtype",
+              "displayName": "单据类型查询关键词",
+              "columnName": "dest_billtype",
+              "maxLength": 50,
+              "numberDigit": null,
+              "isExtend": false,
+              "isSyncDB": true,
+              "assemblyType": 10,
+              "dataType": 6,
+              "dataTypeInfo": null,
+              "refEntity": null,
+              "refEntityCode": null,
+              "nullable": true,
+              "defaultvalue": null,
+              "hidden": null
+            },
+            "code": "dest_billtype",
+            "name": "单据类型查询关键词"
+          },
+          {
+            "parentKey": "G001ZM0000BASE000DEF00000ATT00000039",
+            "title": "单据大类",
+            "key": "G001ZM0000BASE000DEF00000ATT00000044",
+            "isLeaf": true,
+            "infoKey": null,
+            "children": null,
+            "data": {
+              "id": "G001ZM0000BASE000DEF00000ATT00000044",
+              "tableName": null,
+              "propertyName": "Djdl",
+              "displayName": "单据大类",
+              "columnName": "Djdl",
+              "maxLength": 50,
+              "numberDigit": null,
+              "isExtend": false,
+              "isSyncDB": true,
+              "assemblyType": 10,
+              "dataType": 6,
+              "dataTypeInfo": null,
+              "refEntity": null,
+              "refEntityCode": null,
+              "nullable": true,
+              "defaultvalue": null,
+              "hidden": null
+            },
+            "code": "Djdl",
+            "name": "单据大类"
+          }
+        ],
         "data": {
           "id": "G001ZM0000BASE000DEF00000ATT00000039",
           "tableName": null,
@@ -1074,7 +1395,7 @@ const json = [
           "refEntityCode": null,
           "nullable": true,
           "defaultvalue": null,
-          "hidden": false
+          "hidden": null
         },
         "code": "otherInformation",
         "name": "表头其他信息"

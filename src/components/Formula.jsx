@@ -106,8 +106,8 @@ export default class Formula extends React.Component {
     }
   }
 
-  handle单据字段TreeSelect(treeNodeObj) {
-    this.textBoxRef.insertText(` ${treeNodeObj.props.code} `);
+  handle单据字段TreeSelect(treeNodeCode) {
+    this.textBoxRef.insertText(` ${treeNodeCode} `);
   }
 
   /**
