@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.8
+
+- [new] 拼装节点所在的路径 ([#11](https://github.com/yyssc/ssc-formula2/issues/11))
+
 ## v0.1.7
 
 - [new] impl cancel and validate button ([#10](https://github.com/yyssc/ssc-formula2/issues/10))
