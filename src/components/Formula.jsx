@@ -8,8 +8,10 @@ import treeDataShape from '../shapes/treeDataShape';
 import 档案转换ItemsShape from '../shapes/档案转换ItemsShape';
 
 const propTypes = forbidExtraProps({
+  onCancel: PropTypes.func,
   onChange: PropTypes.func,
   onSubmit: PropTypes.func,
+  onValidate: PropTypes.func,
   value: PropTypes.string,
   /**
    * 单据字段标签页中的树的数据
@@ -27,8 +29,10 @@ const propTypes = forbidExtraProps({
 });
 
 export const defaultProps = {
+  onCancel: () => {},
   onChange: () => {},
   onSubmit: () => {},
+  onValidate: () => {},
   value: '',
   固定值档案值RefCode: null,
 };
@@ -137,8 +141,10 @@ export default class Formula extends React.Component {
         <TextBox
           ref={(c) => { this.textBoxRef = c; }}
           value={this.state.value}
+          onCancel={this.props.onCancel}
           onChange={this.props.onChange}
           onSubmit={this.props.onSubmit}
+          onValidate={this.props.onValidate}
         />
         <FormuaTabs
           单据字段TreeData={this.props.单据字段TreeData}

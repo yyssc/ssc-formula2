@@ -9,22 +9,28 @@ let textBoxRef = null;
 storiesOf('TextBox', module)
   .addWithInfo('default', () => (
     <TextBox
+      onCancel={action('TextBox::onCancel')}
       onChange={action('TextBox::onChange')}
       onSubmit={action('TextBox::onSubmit')}
+      onValidate={action('TextBox::onValidate')}
     />
   ))
   .addWithInfo('init value', () => (
     <TextBox
       value={'foo'}
+      onCancel={action('TextBox::onCancel')}
       onChange={action('TextBox::onChange')}
       onSubmit={action('TextBox::onSubmit')}
+      onValidate={action('TextBox::onValidate')}
     />
   ))
   .addWithInfo('update value prop', () => (
     <TextBox
       value={text('TextBox.props.value', 'old')}
+      onCancel={action('TextBox::onCancel')}
       onChange={action('TextBox::onChange')}
       onSubmit={action('TextBox::onSubmit')}
+      onValidate={action('TextBox::onValidate')}
     />
   ))
   .addWithInfo('insert text', () => (
@@ -32,8 +38,10 @@ storiesOf('TextBox', module)
       <TextBox
         ref={(c) => { textBoxRef = c; }}
         value={'foo'}
+        onCancel={action('TextBox::onCancel')}
         onChange={action('TextBox::onChange')}
         onSubmit={action('TextBox::onSubmit')}
+        onValidate={action('TextBox::onValidate')}
       />
       <button
         onClick={() => {

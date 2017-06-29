@@ -15,7 +15,10 @@ storiesOf('Formula (公式编辑器)', module)
       固定值ReferDataUrl="http://127.0.0.1:3009/refbase_ctr/queryRefJSON"
       档案转换ItemsData={档案转换ItemsData}
       固定值档案值RefCode="entity"
+      onCancel={action('Formula::onCancel')}
+      onChange={action('Formula::onChange')}
       onSubmit={action('Formula::onSubmit')}
+      onValidate={action('Formula::onValidate')}
     />
   ))
   .addWithInfo('init value', () => (
@@ -24,7 +27,10 @@ storiesOf('Formula (公式编辑器)', module)
       单据字段TreeData={单据字段TreeData}
       固定值ReferDataUrl="http://127.0.0.1:3009/refbase_ctr/queryRefJSON"
       档案转换ItemsData={档案转换ItemsData}
+      onCancel={action('Formula::onCancel')}
+      onChange={action('Formula::onChange')}
       onSubmit={action('Formula::onSubmit')}
+      onValidate={action('Formula::onValidate')}
     />
   ))
   .addWithInfo('update prop value', () => (
@@ -33,6 +39,9 @@ storiesOf('Formula (公式编辑器)', module)
       单据字段TreeData={单据字段TreeData}
       固定值ReferDataUrl="http://127.0.0.1:3009/refbase_ctr/queryRefJSON"
       档案转换ItemsData={档案转换ItemsData}
+      onCancel={action('Formula::onCancel')}
+      onChange={action('Formula::onChange')}
       onSubmit={action('Formula::onSubmit')}
+      onValidate={action('Formula::onValidate')}
     />
   ));

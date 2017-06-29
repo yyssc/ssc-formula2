@@ -4,14 +4,30 @@ import { forbidExtraProps } from 'airbnb-prop-types';
 import { Grid, Row, Col, FormGroup, FormControl, Button, ButtonToolbar } from 'react-bootstrap';
 
 const propTypes = forbidExtraProps({
+  /**
+   * Press cancel button callback
+   */
+  onCancel: PropTypes.func,
+  /**
+   * Text changed callback
+   */
   onChange: PropTypes.func,
+  /**
+   * Press submit button callback
+   */
   onSubmit: PropTypes.func,
+  /**
+   * [Unknown Feature] Validation callback
+   */
+  onValidate: PropTypes.func,
   value: PropTypes.string,
 });
 
 export const defaultProps = {
+  onCancel: () => {},
   onChange: () => {},
   onSubmit: () => {},
+  onValidate: () => {},
   value: '',
 };
 
@@ -142,11 +158,11 @@ export default class TextBox extends React.Component {
                 >确定</Button>
                 <Button
                   block
-                  onClick={() => {}}
+                  onClick={this.props.onCancel}
                 >取消</Button>
                 <Button
                   block
-                  onClick={() => {}}
+                  onClick={this.props.onValidate}
                 >验证</Button>
                 <Button
                   block
