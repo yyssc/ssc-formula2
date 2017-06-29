@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.7
+
+- [new] impl cancel and validate button ([#10](https://github.com/yyssc/ssc-formula2/issues/10))
+
 ## v0.1.6
 
 - [fix] 解决固定值Tab中档案值参照出现undefined问题 ([#8](https://github.com/yyssc/ssc-formula2/issues/8))
