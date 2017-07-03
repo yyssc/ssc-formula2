@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 import { Refers } from 'ssc-refer2';
 
-import FilterAccSubjectRefer from './refer/FilterAccSubjectRefer';
-import ReferList from './refer/ReferList';
+import FilterAccSubjectRefer from './FilterAccSubjectRefer';
+import ReferList from './ReferList';
 
 /**
  * 郭老师说暂时使用doctype，不过目前（）后端暂时没有测试数据提供

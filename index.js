@@ -1,3 +1,5 @@
+/* eslint-disable object-shorthand */
+
 const Formula = require('./lib/components/Formula').default;
 
 const treeDataShape = require('./lib/shapes/treeDataShape').default;
