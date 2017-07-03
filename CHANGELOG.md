@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.9
+
+- [new] 档案转换最后一个字段不需要双引号 ([#12](https://github.com/yyssc/ssc-formula2/issues/12))
+
 ## v0.1.8
 
 - [new] 拼装节点所在的路径 ([#11](https://github.com/yyssc/ssc-formula2/issues/11))
