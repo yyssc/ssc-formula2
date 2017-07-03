@@ -115,7 +115,7 @@ export default class Formula extends React.Component {
    * ```
    * cmapping("这里拼code / name","这里拼id",这里拼classtype1对应的单据项目,这里拼classtype2对应的单据项目,有几个classtype就拼几个)
    * ```
-   * @param {any} o
+   * @param {any} itemObj
    * @memberof Formula
    */
   handle档案转换ListSelect(itemObj) {
@@ -132,7 +132,7 @@ export default class Formula extends React.Component {
         }
       }
     });
-    this.textBoxRef.insertText(`cmapping("${arg1}","${arg2}","${arg3.join(',')}")`);
+    this.textBoxRef.insertText(`cmapping("${arg1}","${arg2}",${arg3.join(',')})`);
   }
 
   render() {
