@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.11
+
+- [fix] FilterAccSubjectRefer not found  ([#14](https://github.com/yyssc/ssc-formula2/issues/14))
+
 ## v0.1.10
 
 - [new] 添加科目表作为科目的过滤条件 ([#13](https://github.com/yyssc/ssc-formula2/issues/13))
