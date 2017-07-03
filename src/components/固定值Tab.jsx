@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 import { Refers } from 'ssc-refer2';
 
+import FilterAccSubjectRefer from './refer/FilterAccSubjectRefer';
+import ReferList from './refer/ReferList';
+
 /**
  * 郭老师说暂时使用doctype，不过目前（）后端暂时没有测试数据提供
  * 所以这里提供一个接口，让外面组件可以使用其他比如`refCode: 'entity'`进行测试
@@ -12,6 +15,11 @@ const 档案RefCode = 'entity';
 const propTypes = forbidExtraProps({
   /**
    * 档案值参照发生变化的时候回调
+   * ```js
+   * function on档案值ReferChange(
+   *   Object selected, // 如果没有选中项，则返回undefined
+   * )
+   * ```
    */
   on档案值ReferChange: PropTypes.func.isRequired,
   /**
@@ -87,6 +95,52 @@ export default class 固定值Tab extends React.Component {
     }
   }
 
+  render档案值Refer() {
+    const 档案值ReferConditions = {
+      refCode: this.state.档案值RefCode,
+      refType: 'table',
+      displayFields: ['id', 'code', 'name'],
+    };
+    switch (this.state.档案值RefCode) {
+      default:
+      case null:
+        break;
+      case 'attribute':
+        档案值ReferConditions.convertcol = '{name:displayName}';
+        档案值ReferConditions.fields = ['id', 'displayName'];
+        档案值ReferConditions.displayFields = ['id', 'displayName'];
+        break;
+      case 'entity':
+        // http://git.yonyou.com/sscplatform/FC/issues/55
+        // 郭老师说对于参照实体的应该特殊处理
+        // 赵老师给出了特殊处理的方法就是添加`convertcol`参数
+        档案值ReferConditions.convertcol = '{name:displayName}';
+        // http://git.yonyou.com/sscplatform/FC/issues/55#note_53358
+        // 按照赵老师说的，还需要添加几个参数
+        档案值ReferConditions.fields = ['id', 'entityName', 'displayName'];
+        档案值ReferConditions.displayFields = ['id', 'displayName'];
+        break;
+      case 'accsubject':
+        return (
+          <FilterAccSubjectRefer
+            referDataUrl={this.props.referDataUrl}
+            referConditions={档案值ReferConditions}
+            disabled={this.state.档案值RefCode === null}
+            onChange={this.props.on档案值ReferChange}
+          />
+        );
+    }
+    return (
+      <ReferList
+        referDataUrl={this.props.referDataUrl}
+        referConditions={档案值ReferConditions}
+        disabled={this.state.档案值RefCode === null}
+        onChange={this.props.on档案值ReferChange}
+        onBlur={() => {}}
+      />
+    );
+  }
+
   render() {
     const 档案ReferConditions = {
       refCode: 档案RefCode,
@@ -102,21 +156,6 @@ export default class 固定值Tab extends React.Component {
       displayFields: ['id', 'entityName', 'displayName'],
       convertcol: '{code:entityName,name:displayName}',
     };
-    const 档案值ReferConditions = {
-      refCode: this.state.档案值RefCode,
-      refType: 'table',
-      displayFields: ['code', 'name', 'email'],
-    };
-    // http://git.yonyou.com/sscplatform/FC/issues/55
-    // 郭老师说对于参照实体的应该特殊处理
-    // 赵老师给出了特殊处理的方法就是添加`convertcol`参数
-    if (this.state.档案值RefCode === 'entity') {
-      档案值ReferConditions.convertcol = '{name:displayName}';
-      // http://git.yonyou.com/sscplatform/FC/issues/55#note_53358
-      // 按照赵老师说的，还需要添加几个参数
-      档案值ReferConditions.fields = ['id', 'entityName', 'displayName'];
-      档案值ReferConditions.displayFields = ['id', 'displayName'];
-    }
     return (
       <div>
         档案
@@ -131,23 +170,9 @@ export default class 固定值Tab extends React.Component {
           defaultSelected={[]}
         />
         档案值
-        <Refers
-          emptyLabel={''}
-          labelKey="name"
-          onChange={this.props.on档案值ReferChange}
-          placeholder="请选择..."
-          referConditions={档案值ReferConditions}
-          referDataUrl={this.props.referDataUrl}
-          referType="list"
-          defaultSelected={[]}
-          disabled={this.state.档案值RefCode === null}
-          renderMenuItemChildren={option => (
-            <div>
-              <span>{option.code}{option.name}</span>
-            </div>
-          )}
-          filterBy={['name', 'code']}
-        />
+        {
+          this.render档案值Refer()
+        }
       </div>
     );
   }
