@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.10
+
+- [new] 添加科目表作为科目的过滤条件 ([#13](https://github.com/yyssc/ssc-formula2/issues/13))
+
 ## v0.1.9
 
 - [new] 档案转换最后一个字段不需要双引号 ([#12](https://github.com/yyssc/ssc-formula2/issues/12))
