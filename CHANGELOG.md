@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.13
+
+- [new] 从yzb-comp引用业务层的参照组件
+
 ## v0.1.12
 
 - [fix] FICLOUD-1019 测试档案转换插入值的格式 test01  ([#15](https://github.com/yyssc/ssc-formula2/issues/15))
