@@ -127,7 +127,8 @@ export default class Formula extends React.Component {
         // 有可能是null
         if (itemObj[key] !== null) {
           // 需要跟郭老师确认是否使用code就可以了
-          arg3.push(itemObj[key].code);
+          // arg3.push(itemObj[key].code);
+          arg3.push(JSON.stringify(itemObj[key])); // FICLOUD-1019 test01
         }
       }
     });
