@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.12
+
+- [fix] FICLOUD-1019 测试档案转换插入值的格式 test01  ([#15](https://github.com/yyssc/ssc-formula2/issues/15))
+
 ## v0.1.11
 
 - [fix] FilterAccSubjectRefer not found  ([#14](https://github.com/yyssc/ssc-formula2/issues/14))
