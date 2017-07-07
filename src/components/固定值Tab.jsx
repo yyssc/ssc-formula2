@@ -21,30 +21,39 @@ const propTypes = forbidExtraProps({
    * ```
    */
   on档案值ReferChange: PropTypes.func.isRequired,
+});
+
+export const defaultProps = {
+};
+
+// TODO
+// 使用https://github.com/acdlite/recompose 提供的withContext和getContext方法
+// 来取消在组件中直接使用this.context.foo的形式
+// 具体参照https://medium.com/react-ecosystem/how-to-handle-react-context-a7592dfdcbc
+
+const contextTypes = {
   /**
+   * 参照的服务器地址
    * 参照组件<Refers>内部可以发起请求
    * http://127.0.0.1:3009/refbase_ctr/queryRefJSON
    */
   referDataUrl: PropTypes.string.isRequired,
   /**
-   * 临时方案，由外面传进来
+   * 类型为string|null
    */
-  档案值RefCode: PropTypes.string,
-});
-
-export const defaultProps = {
-  档案值RefCode: null,
+  固定值档案值RefCode: PropTypes.string,
 };
 
 export default class 固定值Tab extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this.state = {
-      档案值RefCode: props.档案值RefCode, // null,
+      档案值RefCode: context.固定值档案值RefCode, // string|null
     };
 
     this.handle档案ReferChange = this.handle档案ReferChange.bind(this);
+    this.handle档案值ReferChange = this.handle档案值ReferChange.bind(this);
   }
 
   componentDidMount() {
@@ -94,6 +103,10 @@ export default class 固定值Tab extends React.Component {
     }
   }
 
+  handle档案值ReferChange(selected) {
+    this.props.on档案值ReferChange(selected, this.state.档案值RefCode);
+  }
+
   render档案值Refer() {
     const 档案值ReferConditions = {
       refCode: this.state.档案值RefCode,
@@ -122,19 +135,19 @@ export default class 固定值Tab extends React.Component {
       case 'accsubject':
         return (
           <FilterAccSubjectRefer
-            referDataUrl={this.props.referDataUrl}
+            referDataUrl={this.context.referDataUrl}
             referConditions={档案值ReferConditions}
             disabled={this.state.档案值RefCode === null}
-            onChange={this.props.on档案值ReferChange}
+            onChange={this.handle档案值ReferChange}
           />
         );
     }
     return (
       <ReferList
-        referDataUrl={this.props.referDataUrl}
+        referDataUrl={this.context.referDataUrl}
         referConditions={档案值ReferConditions}
         disabled={this.state.档案值RefCode === null}
-        onChange={this.props.on档案值ReferChange}
+        onChange={this.handle档案值ReferChange}
         onBlur={() => {}}
       />
     );
@@ -164,7 +177,7 @@ export default class 固定值Tab extends React.Component {
           onChange={this.handle档案ReferChange}
           placeholder="请选择..."
           referConditions={档案ReferConditions}
-          referDataUrl={this.props.referDataUrl}
+          referDataUrl={this.context.referDataUrl}
           referType="list"
           defaultSelected={[]}
         />
@@ -179,3 +192,4 @@ export default class 固定值Tab extends React.Component {
 
 固定值Tab.propTypes = propTypes;
 固定值Tab.defaultProps = defaultProps;
+固定值Tab.contextTypes = contextTypes;

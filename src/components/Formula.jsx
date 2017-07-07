@@ -39,6 +39,10 @@ export const defaultProps = {
 
 const childContextTypes = {
   referDataUrl: PropTypes.string.isRequired,
+  /**
+   * 传到“固定值”标签页<固定值Tab>组件
+   */
+  固定值档案值RefCode: PropTypes.string,
 };
 
 export default class Formula extends React.Component {
@@ -55,7 +59,10 @@ export default class Formula extends React.Component {
   }
 
   getChildContext() {
-    return { referDataUrl: this.props.固定值ReferDataUrl };
+    return {
+      referDataUrl: this.props.固定值ReferDataUrl,
+      固定值档案值RefCode: this.props.固定值档案值RefCode,
+    };
   }
 
   componentDidMount() {
@@ -105,10 +112,9 @@ export default class Formula extends React.Component {
    * @param {Object} selected 如果没有选中项目则是undefined
    * @memberof Formula
    */
-  handle档案值ReferChange(selected) {
+  handle档案值ReferChange(selected, 档案值RefCode) {
     if (selected) {
-      const 固定值档案值RefCode = this.props.固定值档案值RefCode;
-      this.textBoxRef.insertText(`getID("${固定值档案值RefCode}","${selected.name}","${selected.id}") `);
+      this.textBoxRef.insertText(`getID("${档案值RefCode}","${selected.name}","${selected.id}") `);
     }
   }
 
@@ -157,9 +163,7 @@ export default class Formula extends React.Component {
         />
         <FormuaTabs
           单据字段TreeData={this.props.单据字段TreeData}
-          固定值ReferDataUrl={this.props.固定值ReferDataUrl}
           档案转换ItemsData={this.props.档案转换ItemsData}
-          固定值档案值RefCode={this.props.固定值档案值RefCode}
           on档案值ReferChange={this.handle档案值ReferChange}
           on单据字段TreeSelect={this.handle单据字段TreeSelect}
           on档案转换Insert={this.handle档案转换Insert}
