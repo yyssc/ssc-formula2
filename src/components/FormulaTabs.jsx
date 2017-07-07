@@ -14,7 +14,7 @@ import 档案转换ItemsShape from '../shapes/档案转换ItemsShape';
 const propTypes = forbidExtraProps({
   on档案值ReferChange: PropTypes.func.isRequired,
   on单据字段TreeSelect: PropTypes.func,
-  on档案转换ListSelect: PropTypes.func.isRequired,
+  on档案转换Insert: PropTypes.func.isRequired,
   /**
    * 单据字段标签页中的树的数据
    */
@@ -97,7 +97,7 @@ export default class FormulaTabs extends React.Component {
           <Tab eventKey={'档案转换'} title="档案转换">
             <档案转换Tab
               items={this.props.档案转换ItemsData}
-              onSelect={this.props.on档案转换ListSelect}
+              onInsert={this.props.on档案转换Insert}
             />
           </Tab>
           {/* <Tab eventKey={'环境变量'} title="环境变量">Tab 3 content</Tab>*/}

@@ -37,6 +37,9 @@ export const defaultProps = {
   固定值档案值RefCode: null,
 };
 
+const childContextTypes = {
+  referDataUrl: PropTypes.string.isRequired,
+};
 
 export default class Formula extends React.Component {
   constructor(props) {
@@ -48,7 +51,11 @@ export default class Formula extends React.Component {
 
     this.handle档案值ReferChange = this.handle档案值ReferChange.bind(this);
     this.handle单据字段TreeSelect = this.handle单据字段TreeSelect.bind(this);
-    this.handle档案转换ListSelect = this.handle档案转换ListSelect.bind(this);
+    this.handle档案转换Insert = this.handle档案转换Insert.bind(this);
+  }
+
+  getChildContext() {
+    return { referDataUrl: this.props.固定值ReferDataUrl };
   }
 
   componentDidMount() {
@@ -114,10 +121,11 @@ export default class Formula extends React.Component {
    * ```
    * cmapping("这里拼code / name","这里拼id",这里拼classtype1对应的单据项目,这里拼classtype2对应的单据项目,有几个classtype就拼几个)
    * ```
-   * @param {any} itemObj
+   * @param {Object} itemObj “档案转换”标签页中列表中选中的项目
+   * @param {Object} refersValue “档案转换”标签页所有参照的选择值
    * @memberof Formula
    */
-  handle档案转换ListSelect(itemObj) {
+  handle档案转换Insert(itemObj, refersValue) {
     const arg1 = `${itemObj.code} / ${itemObj.name}`;
     const arg2 = `${itemObj.id}`;
     const arg3 = [];
@@ -126,9 +134,10 @@ export default class Formula extends React.Component {
       if (/^classtype\d$/.exec(key) !== null) {
         // 有可能是null
         if (itemObj[key] !== null) {
-          // 需要跟郭老师确认是否使用code就可以了
-          // arg3.push(itemObj[key].code);
-          arg3.push(JSON.stringify(itemObj[key])); // FICLOUD-1019 test01
+          const referValue = refersValue[itemObj[key].id];
+          if (referValue) {
+            arg3.push(referValue.code);
+          }
         }
       }
     });
@@ -153,7 +162,7 @@ export default class Formula extends React.Component {
           固定值档案值RefCode={this.props.固定值档案值RefCode}
           on档案值ReferChange={this.handle档案值ReferChange}
           on单据字段TreeSelect={this.handle单据字段TreeSelect}
-          on档案转换ListSelect={this.handle档案转换ListSelect}
+          on档案转换Insert={this.handle档案转换Insert}
         />
       </div>
     );
@@ -162,3 +171,4 @@ export default class Formula extends React.Component {
 
 Formula.propTypes = propTypes;
 Formula.defaultProps = defaultProps;
+Formula.childContextTypes = childContextTypes;

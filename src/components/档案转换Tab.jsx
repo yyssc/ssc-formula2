@@ -4,13 +4,13 @@ import { forbidExtraProps } from 'airbnb-prop-types';
 
 import SearchBox from './SearchBox';
 import SelectList from './SelectList';
-import DetailBox from './DetailBox';
+import ReferListsBox from './ReferListsBox';
 
 import 档案转换ItemsShape from '../shapes/档案转换ItemsShape';
 
 const propTypes = forbidExtraProps({
   items: 档案转换ItemsShape.isRequired,
-  onSelect: PropTypes.func.isRequired,
+  onInsert: PropTypes.func.isRequired,
 });
 
 export const defaultProps = {
@@ -24,7 +24,7 @@ export default class 档案转换Tab extends React.Component {
     this.state = {
       currentSelectedIndex: 0,
       matchResults: [],
-      details: [],
+      refers: [],
     };
 
     this.handleFindNext = this.handleFindNext.bind(this);
@@ -136,29 +136,40 @@ export default class 档案转换Tab extends React.Component {
   }
 
   /**
-   * 更新DetailBox组件内容
+   * 更新ReferListsBox组件内容
    * @param {any} selectedItemObj
    * @memberof 档案转换Tab
    */
-  updateDetailBox(selectedItemObj) {
-    const newDetails = [];
+  updateReferListsBox(selectedItemObj) {
+    const newRefers = [];
     let index = 1;
     let classType;
+    // 遍历classtype1~classtype98
     for (; index < 99; index += 1) {
       classType = selectedItemObj[`classtype${index}`];
       if (selectedItemObj[`classtype${index}`] === null) {
         break;
       }
-      newDetails.push(classType.name);
+      newRefers.push(classType);
     }
+    // 另外一种遍历所有classtype的方法
+    // Object.keys(selectedItemObj).forEach((key) => {
+    //   // key需要是classtype加数字的形式
+    //   if (/^classtype\d$/.exec(key) !== null) {
+    //     // 有可能是null
+    //     if (selectedItemObj[key] !== null) {
+    //       newRefers.push(selectedItemObj[key]);
+    //     }
+    //   }
+    // });
     this.setState({
-      details: newDetails,
+      refers: newRefers,
+      selectedItemObj, // TODO 需要从本方法中拆分出去
     });
   }
 
   handleSelect(selectedItemObj) {
-    this.updateDetailBox(selectedItemObj);
-    this.props.onSelect(selectedItemObj);
+    this.updateReferListsBox(selectedItemObj);
   }
 
   render() {
@@ -173,8 +184,11 @@ export default class 档案转换Tab extends React.Component {
           items={this.props.items}
           onSelect={this.handleSelect}
         />
-        <DetailBox
-          details={this.state.details}
+        <ReferListsBox
+          refers={this.state.refers}
+          onInsert={(refersValue) => {
+            this.props.onInsert(this.state.selectedItemObj, refersValue);
+          }}
         />
       </div>
     );

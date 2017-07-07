@@ -15,8 +15,9 @@ storiesOf('FormulaTabs', module)
       档案转换ItemsData={档案转换ItemsData}
       on档案值ReferChange={action('FormulaTabs::on档案值ReferChange')}
       on单据字段TreeSelect={(o) => {
+        // 由于o对象存在nested循环，使用action直接print的时候会陷入死循环
         console.log('FormulaTabs::on单据字段TreeSelect', o);
       }}
-      on档案转换ListSelect={action('FormulaTabs::on档案转换ListSelect')}
+      on档案转换Insert={action('FormulaTabs::on档案转换Insert')}
     />
   ));

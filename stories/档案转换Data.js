@@ -86,7 +86,11 @@ const json = [
       "code": "dept",
       "name": "部门2"
     },
-    "classtype2": null,
+    "classtype2": {
+      "id": "G001ZM0000BASEDOCDEPT000000000000001",
+      "code": "dept",
+      "name": "部门22"
+    },
     "classtype3": null,
     "classtype4": null,
     "classtype5": null,
@@ -141,8 +145,16 @@ const json = [
       "code": "dept",
       "name": "部门3"
     },
-    "classtype2": null,
-    "classtype3": null,
+    "classtype2": {
+      "id": "G001ZM0000BASEDOCDEPT000000000000001",
+      "code": "dept",
+      "name": "部门33"
+    },
+    "classtype3": {
+      "id": "G001ZM0000BASEDOCDEPT000000000000002",
+      "code": "dept",
+      "name": "部门333"
+    },
     "classtype4": null,
     "classtype5": null,
     "classtype6": null,
