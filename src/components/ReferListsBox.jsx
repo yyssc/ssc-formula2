@@ -72,12 +72,15 @@ export default class ReferListsBox extends React.Component {
   }
 
   render() {
+    const leftCols = { lg: 6, md: 6 };
+    const rightCols = { lg: 6, md: 6 };
+
     return (
       <div>
         <hr />
-        <Grid>
+        <Grid fluid>
           <Row>
-            <Col>
+            <Col {...leftCols}>
               {
                 this.props.refers.map(refer => (
                   <div key={refer.id}>
@@ -98,7 +101,7 @@ export default class ReferListsBox extends React.Component {
                 ))
               }
             </Col>
-            <Col>
+            <Col {...rightCols}>
               <button onClick={() => { this.handleInsert(); }}>插入</button>
             </Col>
           </Row>
