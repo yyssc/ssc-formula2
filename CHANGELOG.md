@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.16
+
+- [fix] 修复getID函数第一个参数是null的问题 ([#16](https://github.com/yyssc/ssc-formula2/issues/16))
+
 ## v0.1.15
 
 - [fix] 修复布局问题 ([#15](https://github.com/yyssc/ssc-formula2/issues/15))
