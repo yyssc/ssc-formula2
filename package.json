@@ -1,6 +1,6 @@
 {
   "name": "ssc-formula2",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "A formula component built with React",
   "main": "index.js",
   "scripts": {

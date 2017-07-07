@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.14
+
+- [new] 在“档案转换”标签页添加参照 ([#15](https://github.com/yyssc/ssc-formula2/issues/15))
+
 ## v0.1.13
 
 - [new] 从yzb-comp引用业务层的参照组件
