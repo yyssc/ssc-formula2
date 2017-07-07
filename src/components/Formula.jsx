@@ -136,7 +136,7 @@ export default class Formula extends React.Component {
         if (itemObj[key] !== null) {
           const referValue = refersValue[itemObj[key].id];
           if (referValue) {
-            arg3.push(referValue.code);
+            arg3.push(referValue.name);
           }
         }
       }
