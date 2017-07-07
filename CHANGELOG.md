@@ -1,5 +1,10 @@
 # Change Log
 
+## v0.1.15
+
+- [fix] 修复布局问题 ([#15](https://github.com/yyssc/ssc-formula2/issues/15))
+- [fix] classtype取得是name不是code ([#15](https://github.com/yyssc/ssc-formula2/issues/15))
+
 ## v0.1.14
 
 - [new] 在“档案转换”标签页添加参照 ([#15](https://github.com/yyssc/ssc-formula2/issues/15))
