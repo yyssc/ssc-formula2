@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 
 import SearchBox from './SearchBox';
-import FormulaTree from './FormulaTree';
+import SingleSelectTree from './SingleSelectTree';
 import DetailBox from './DetailBox';
 import treeDataShape from '../shapes/treeDataShape';
+import findPath from '../utils/findPath';
 
 const propTypes = forbidExtraProps({
   treeData: treeDataShape.isRequired,
@@ -28,6 +29,7 @@ export default class 单据字段Tab extends React.Component {
 
     this.handleFindNext = this.handleFindNext.bind(this);
     this.handleSearchBoxChange = this.handleSearchBoxChange.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
   componentDidMount() {
@@ -135,6 +137,37 @@ export default class 单据字段Tab extends React.Component {
     this.resetIndex();
   }
 
+  /**
+   * 选择一个节点回调
+   * ```js
+   * function onTreeSelect(
+   *   string path // 节点所在tree的路径，以小数点将节点名称拼接起来，比如parent.child
+   * )
+   * ```
+   */
+  handleSelect(nodeData) {
+    const path = findPath(nodeData.code, this.props.treeData)
+      .map(n => n.code)
+      .filter(code => code.trim() !== '')
+      .reverse()
+      .join('.');
+    // ========================================================================
+    // `info.node`是TreeNode的实例，这个对象很复杂，不要直接向上抛
+    // 另外发现一个"Storybook Addon Actions"的bug，就是当使用如下代码的时候
+    // ```js
+    // <FormulaTree
+    //   treeData={json}
+    //   onSelect={action('FormulaTree::onSelect')}
+    // />
+    // ```
+    // action()会将onSelect()的参数先格式化一下，然后在打印在页面上的"Action Logger"中
+    // 可能是格式化期间的一个bug，导致了浏览器当前标签页卡死了，应该是因为js中存在死循环了，
+    // 这是由于onSelect的参数是一个js object，可能存在循环嵌套的问题
+    // ========================================================================
+    // this.props.onSelect(info.node);
+    this.props.onTreeSelect(path);
+  }
+
   render() {
     return (
       <div>
@@ -142,10 +175,10 @@ export default class 单据字段Tab extends React.Component {
           onClick={this.handleFindNext}
           onChange={this.handleSearchBoxChange}
         />
-        <FormulaTree
+        <SingleSelectTree
           treeData={this.props.treeData}
           selectedKey={this.getSelectedNodeKey()}
-          onSelect={this.props.onTreeSelect}
+          onSelect={this.handleSelect}
         />
         <DetailBox
           details={['展示详细信息...']}

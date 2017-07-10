@@ -3,12 +3,25 @@ import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 import Tree, { TreeNode } from 'rc-tree';
 
-import findPath from '../utils/findPath';
 import treeDataShape from '../shapes/treeDataShape';
 
 const propTypes = forbidExtraProps({
+  /**
+   * 选择一个节点回调
+   * ```js
+   * function onSelect(
+   *   Object nodeData // 节点上承载的数据
+   * )
+   * ```
+   */
   onSelect: PropTypes.func,
+  /**
+   * 被选中的节点的key属性
+   */
   selectedKey: PropTypes.string,
+  /**
+   * 以JSON表示的树的数据
+   */
   treeData: treeDataShape.isRequired,
 });
 
@@ -17,7 +30,7 @@ export const defaultProps = {
   selectedKey: null,
 };
 
-export default class FormulaTree extends React.Component {
+export default class SingleSelectTree extends React.Component {
   constructor(props) {
     super(props);
 
@@ -86,12 +99,6 @@ export default class FormulaTree extends React.Component {
     this.setState({
       selectedKeys,
     });
-    const selectedNodeCode = info.node.props.code;
-    const path = findPath(selectedNodeCode, this.props.treeData)
-      .map(node => node.code)
-      .filter(code => code.trim() !== '')
-      .reverse()
-      .join('.');
     // ========================================================================
     // `info.node`是TreeNode的实例，这个对象很复杂，不要直接向上抛
     // 另外发现一个"Storybook Addon Actions"的bug，就是当使用如下代码的时候
@@ -105,8 +112,7 @@ export default class FormulaTree extends React.Component {
     // 可能是格式化期间的一个bug，导致了浏览器当前标签页卡死了，应该是因为js中存在死循环了，
     // 这是由于onSelect的参数是一个js object，可能存在循环嵌套的问题
     // ========================================================================
-    // this.props.onSelect(info.node);
-    this.props.onSelect(path);
+    this.props.onSelect(info.node.props.nodeData);
   }
 
   render() {
@@ -117,6 +123,7 @@ export default class FormulaTree extends React.Component {
             key={item.key}
             title={item.title}
             code={item.code}
+            nodeData={item}
           >
             {loop(item.children)}
           </TreeNode>
@@ -127,11 +134,12 @@ export default class FormulaTree extends React.Component {
           key={item.key}
           title={item.title}
           code={item.code}
+          nodeData={item}
         />
       );
     });
     return (
-      <div className="dan-ju-zi-duan-tree">
+      <div className="single-select-tree">
         <Tree
           showLine
           onExpand={this.onExpand}
@@ -148,5 +156,5 @@ export default class FormulaTree extends React.Component {
 
 }
 
-FormulaTree.propTypes = propTypes;
-FormulaTree.defaultProps = defaultProps;
+SingleSelectTree.propTypes = propTypes;
+SingleSelectTree.defaultProps = defaultProps;

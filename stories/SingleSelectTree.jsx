@@ -2,24 +2,24 @@ import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { text } from '@kadira/storybook-addon-knobs';
 
-import FormulaTree from '../src/components/FormulaTree';
+import SingleSelectTree from '../src/components/SingleSelectTree';
 import json from './单据字段Data';
 
-storiesOf('FormulaTree', module)
+storiesOf('SingleSelectTree', module)
   .addWithInfo('default', () => (
-    <FormulaTree
+    <SingleSelectTree
       treeData={json}
     />
   ))
   .addWithInfo('onSelect', () => (
-    <FormulaTree
+    <SingleSelectTree
       treeData={json}
-      onSelect={action('FormulaTree::onSelect')}
+      onSelect={action('SingleSelectTree::onSelect')}
     />
   ))
   .addWithInfo('update prop selectedKey', () => (
-    <FormulaTree
+    <SingleSelectTree
       treeData={json}
-      selectedKey={text('FormulaTree.props.selectedKey', 'G001ZM0000BASE000DEF00000ATT00000004')}
+      selectedKey={text('SingleSelectTree.props.selectedKey', 'G001ZM0000BASE000DEF00000ATT00000004')}
     />
   ));

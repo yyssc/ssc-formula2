@@ -67,14 +67,16 @@ function loadStories() {
   // require('../stories/SingleDatePicker_day');
   // require('../stories/DayPickerRangeController');
   // require('../stories/DayPicker');
+
   // components
   require('../stories/TextBox');
-  require('../stories/FormulaTree');
+  require('../stories/SingleSelectTree');
   require('../stories/SearchBox');
   require('../stories/SelectList');
   require('../stories/DetailBox');
   require('../stories/ReferListsBox');
   require('../stories/ReferList2');
+
   // containers
   require('../stories/Formula');
   require('../stories/FormulaTabs');
