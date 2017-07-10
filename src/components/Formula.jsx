@@ -176,3 +176,4 @@ export default class Formula extends React.Component {
 Formula.propTypes = propTypes;
 Formula.defaultProps = defaultProps;
 Formula.childContextTypes = childContextTypes;
+Formula.displayName = 'Formula';
