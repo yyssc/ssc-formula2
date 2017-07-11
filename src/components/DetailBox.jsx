@@ -52,7 +52,7 @@ export default class DetailBox extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="detail-box">
         <hr />
         {
           this.props.details.map(detail => (
