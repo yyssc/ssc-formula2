@@ -30,6 +30,8 @@ export const defaultProps = {
   selectedKey: null,
 };
 
+// TODO 转移到基础组件库，比如ssc-grid
+
 export default class SingleSelectTree extends React.Component {
   constructor(props) {
     super(props);

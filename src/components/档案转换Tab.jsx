@@ -7,10 +7,12 @@ import SelectList from './SelectList';
 import ReferListsBox from './ReferListsBox';
 
 import 档案转换ItemsShape from '../shapes/档案转换ItemsShape';
+import treeDataShape from '../shapes/treeDataShape';
 
 const propTypes = forbidExtraProps({
   items: 档案转换ItemsShape.isRequired,
   onInsert: PropTypes.func.isRequired,
+  treeData: treeDataShape.isRequired,
 });
 
 export const defaultProps = {
@@ -186,6 +188,7 @@ export default class 档案转换Tab extends React.Component {
         />
         <ReferListsBox
           refers={this.state.refers}
+          treeData={this.props.treeData}
           onInsert={(refersValue) => {
             this.props.onInsert(this.state.selectedItemObj, refersValue);
           }}

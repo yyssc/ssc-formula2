@@ -48,7 +48,7 @@ const defaultProps = {
   trigger: ['hover'],
   overlayClassName: '',
   overlayStyle: {
-    // width: '400px',
+    width: '200px',
     maxHeight: '300px',
     overflow: 'auto',
   },
@@ -68,6 +68,7 @@ export default class DropdownTreeTrigger extends React.Component {
     };
     this.handleVisibleChange = this.handleVisibleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.afterVisibleChange = this.afterVisibleChange.bind(this);
   }
 
   componentWillReceiveProps(props) {

@@ -89,6 +89,7 @@ export default class FormulaTabs extends React.Component {
           <Tab eventKey={'档案转换'} title="档案转换">
             <档案转换Tab
               items={this.props.档案转换ItemsData}
+              treeData={this.props.单据字段TreeData}
               onInsert={this.props.on档案转换Insert}
             />
           </Tab>

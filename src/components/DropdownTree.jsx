@@ -52,6 +52,7 @@ export default class DropdownTree extends React.Component {
         onSelect={this.onSelect}
       />
     </div>);
+    const width = '400px';
 
     return (
       <div className="dropdown-tree">
@@ -61,12 +62,20 @@ export default class DropdownTree extends React.Component {
           visible={this.state.visible}
           closeOnSelect={false}
           overlay={overlay}
+          overlayStyle={{
+            width,
+            maxHeight: '300px',
+            overflow: 'auto',
+          }}
           animation="slide-up"
         >
           <FormControl
             type="text"
             value={this.state.sel}
             placeholder="点击输入框进行选择"
+            style={{
+              width,
+            }}
             onChange={(event) => {
               this.setState({
                 sel: event.target.value,

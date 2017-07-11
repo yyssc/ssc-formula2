@@ -4,16 +4,19 @@ import { forbidExtraProps } from 'airbnb-prop-types';
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
-import { ReferList } from 'yzb-comp';
 import update from 'immutability-helper';
 
+import DropdownTree from './DropdownTree';
+import treeDataShape from '../shapes/treeDataShape';
+
 const propTypes = forbidExtraProps({
+  onInsert: PropTypes.func.isRequired,
   refers: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     code: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
   })),
-  onInsert: PropTypes.func.isRequired,
+  treeData: treeDataShape.isRequired,
 });
 
 export const defaultProps = {
@@ -85,17 +88,11 @@ export default class ReferListsBox extends React.Component {
                 this.props.refers.map(refer => (
                   <div key={refer.id}>
                     {refer.name}
-                    <ReferList
-                      referDataUrl={this.context.referDataUrl}
-                      referConditions={{
-                        refCode: refer.code,
-                        refType: 'table',
-                        displayFields: ['id', 'code', 'name'],
+                    <DropdownTree
+                      treeData={this.props.treeData}
+                      onChange={(nodeData) => {
+                        this.setState(ReferListsBox.updateFieldValue(refer.id, nodeData));
                       }}
-                      onChange={(selected) => {
-                        this.setState(ReferListsBox.updateFieldValue(refer.id, selected));
-                      }}
-                      onBlur={() => {}}
                     />
                   </div>
                 ))
