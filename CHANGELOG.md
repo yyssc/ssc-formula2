@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.17
+
+- [new] 使用`DropdownTree`组件替换`ReferList`组件 ([#17](https://github.com/yyssc/ssc-formula2/issues/17))
+
 ## v0.1.16
 
 - [fix] 修复getID函数第一个参数是null的问题 ([#16](https://github.com/yyssc/ssc-formula2/issues/16))
