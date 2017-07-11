@@ -14,7 +14,7 @@ const propTypes = {
   treeData: treeDataShape.isRequired,
 };
 
-const defaultProps = {
+export const defaultProps = {
   onChange: () => {},
 };
 
