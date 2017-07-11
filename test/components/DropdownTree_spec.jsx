@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
 import DropdownTree from '../../src/components/DropdownTree';
-import treeData from './TreeData';
+import treeData from '../TreeData';
 
 describe('DropdownTree', () => {
   describe('#render', () => {

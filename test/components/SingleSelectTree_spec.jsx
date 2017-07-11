@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
 import SingleSelectTree from '../../src/components/SingleSelectTree';
-import treeData from './TreeData';
+import treeData from '../TreeData';
 
 describe('SingleSelectTree', () => {
   describe('#render', () => {
