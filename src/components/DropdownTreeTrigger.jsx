@@ -67,7 +67,7 @@ export default class DropdownTreeTrigger extends React.Component {
       visible: props.visible,
     };
     this.handleVisibleChange = this.handleVisibleChange.bind(this);
-    this.handleClickClick = this.handleClickClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentWillReceiveProps(props) {
@@ -82,7 +82,7 @@ export default class DropdownTreeTrigger extends React.Component {
     const props = this.props;
     return React.cloneElement(props.overlay, {
       // prefixCls: `${props.prefixCls}-menu`,
-      onClick: this.handleClickClick,
+      onClick: this.handleClick,
     });
   }
 

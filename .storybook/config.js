@@ -76,7 +76,7 @@ function loadStories() {
   require('../stories/DetailBox');
   require('../stories/ReferListsBox');
   require('../stories/ReferList2');
-  require('../stories/DropdownTreeDemo');
+  require('../stories/DropdownTree');
 
 
   // containers
