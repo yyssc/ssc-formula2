@@ -11,4 +11,18 @@ storiesOf('DropdownTree', module)
       treeData={json}
       onChange={action('DropdownTree::onChange')}
     />
+  ))
+  .addWithInfo('with styles', () => (
+    <DropdownTree
+      inputStyle={{
+        width: '180px',
+      }}
+      overlayStyle={{
+        width: '500px',
+        maxHeight: '100px',
+        overflow: 'auto',
+      }}
+      treeData={json}
+      onChange={action('DropdownTree::onChange')}
+    />
   ));

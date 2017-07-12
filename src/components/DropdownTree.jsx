@@ -6,16 +6,35 @@ import DropdownTreeTrigger from './DropdownTreeTrigger';
 import treeDataShape from '../shapes/treeDataShape';
 // import './dropdown.less';
 
+// By default dropdown overlay and input field all use this width
+const DEFAULT_WIDTH = '400px';
+
 const propTypes = {
+  /**
+   * The style for input field
+   */
+  inputStyle: PropTypes.object,
   onChange: PropTypes.func,
   /**
-   * 以JSON表示的树的数据
+   * The style for dropdown tree overlay
+   */
+  overlayStyle: PropTypes.object,
+  /**
+   * The data of dropdown tree
    */
   treeData: treeDataShape.isRequired,
 };
 
 export const defaultProps = {
+  inputStyle: {
+    width: DEFAULT_WIDTH,
+  },
   onChange: () => {},
+  overlayStyle: {
+    DEFAULT_WIDTH,
+    maxHeight: '300px',
+    overflow: 'auto',
+  },
 };
 
 export default class DropdownTree extends React.Component {
@@ -52,7 +71,6 @@ export default class DropdownTree extends React.Component {
         onSelect={this.onSelect}
       />
     </div>);
-    const width = '400px';
 
     return (
       <div className="dropdown-tree">
@@ -60,22 +78,15 @@ export default class DropdownTree extends React.Component {
           trigger={['click']}
           onVisibleChange={this.onVisibleChange}
           visible={this.state.visible}
-          closeOnSelect={false}
           overlay={overlay}
-          overlayStyle={{
-            width,
-            maxHeight: '300px',
-            overflow: 'auto',
-          }}
+          overlayStyle={this.props.overlayStyle}
           animation="slide-up"
         >
           <FormControl
             type="text"
             value={this.state.sel}
             placeholder="点击输入框进行选择"
-            style={{
-              width,
-            }}
+            style={this.props.inputStyle}
             onChange={(event) => {
               this.setState({
                 sel: event.target.value,
