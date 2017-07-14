@@ -4,6 +4,7 @@ import { forbidExtraProps } from 'airbnb-prop-types';
 import Tree, { TreeNode } from 'rc-tree';
 
 import treeDataShape from '../shapes/treeDataShape';
+import findPath from '../utils/findPath';
 
 const propTypes = forbidExtraProps({
   /**
@@ -160,3 +161,19 @@ export default class SingleSelectTree extends React.Component {
 
 SingleSelectTree.propTypes = propTypes;
 SingleSelectTree.defaultProps = defaultProps;
+
+/**
+ * 根据节点的code来搜索节点所在树中的路径
+ * @param {string} nodeCode 节点数据中的code，比如节点对象是
+ * ```js
+ * {title:'补助金额标准',key:'G001ZM0000BASE000DEF00000ATT00000045',code:'subsidyUnits',name:'补助金额标准'}
+ * ```
+ * 那么nodeCode应该是`subsidyUnits`
+ * @param {Object} treeData 树的数据
+ * @return {string}
+ */
+SingleSelectTree.findPath = (nodeCode, treeData) => findPath(nodeCode, treeData)
+  .map(n => n.code)
+  .filter(code => code.trim() !== '')
+  .reverse()
+  .join('.');

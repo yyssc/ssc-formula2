@@ -7,9 +7,18 @@ import Col from 'react-bootstrap/lib/Col';
 import update from 'immutability-helper';
 
 import DropdownTree from './DropdownTree';
+import SingleSelectTree from './SingleSelectTree';
 import treeDataShape from '../shapes/treeDataShape';
 
 const propTypes = forbidExtraProps({
+  /**
+   * 点击插入按钮的回调函数
+   * ```js
+   * function (
+   *   Object classtypePath, // 该对象的结构参照this.state.refersValue
+   * )
+   * ```
+   */
   onInsert: PropTypes.func.isRequired,
   refers: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
@@ -31,6 +40,16 @@ export default class ReferListsBox extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
+      /**
+       * 以键值对形式存储所有的路径，比如
+       * ```js
+       * {
+       *   '57B3D229-FD2E-446A-9ED1-14FCF668214E': 'subsidy.subsidyUnits',
+       * }
+       * ```
+       * 键部分是classtype1对应的单据项目的id
+       * 值部分是从tree选择一个节点之后，该节点在tree中的path
+       */
       refersValue: {},
     };
   }
@@ -91,7 +110,8 @@ export default class ReferListsBox extends React.Component {
                     <DropdownTree
                       treeData={this.props.treeData}
                       onChange={(nodeData) => {
-                        this.setState(ReferListsBox.updateFieldValue(refer.id, nodeData));
+                        const path = SingleSelectTree.findPath(nodeData.code, this.props.treeData);
+                        this.setState(ReferListsBox.updateFieldValue(refer.id, path));
                       }}
                     />
                   </div>

@@ -129,10 +129,10 @@ export default class Formula extends React.Component {
    * ```
    * TODO 应该把cmapping的组装规则扔到`档案转换Tab.jsx`文件中处理
    * @param {Object} itemObj “档案转换”标签页中列表中选中的项目
-   * @param {Object} refersValue “档案转换”标签页所有树状参照的选择值
+   * @param {Object} classtypePath “档案转换”标签页所有树状参照的选择值
    * @memberof Formula
    */
-  handle档案转换Insert(itemObj, refersValue) {
+  handle档案转换Insert(itemObj, classtypePath) {
     const arg1 = `${itemObj.code} / ${itemObj.name}`;
     const arg2 = `${itemObj.id}`;
     const arg3 = [];
@@ -141,12 +141,8 @@ export default class Formula extends React.Component {
       if (/^classtype\d$/.exec(key) !== null) {
         // 有可能是null
         if (itemObj[key] !== null) {
-          const referValue = refersValue[itemObj[key].id];
-          if (referValue) {
-            arg3.push(referValue.code);
-          } else {
-            arg3.push('');
-          }
+          const path = classtypePath[itemObj[key].id];
+          arg3.push(path || '');
         }
       }
     });

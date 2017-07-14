@@ -6,10 +6,14 @@ import SearchBox from './SearchBox';
 import SingleSelectTree from './SingleSelectTree';
 import DetailBox from './DetailBox';
 import treeDataShape from '../shapes/treeDataShape';
-import findPath from '../utils/findPath';
 
 const propTypes = forbidExtraProps({
   treeData: treeDataShape.isRequired,
+  /**
+   * function (
+   *   string path, // 节点在树上的完整路径，比如`root.parent.child`
+   * )
+   */
   onTreeSelect: PropTypes.func,
 });
 
@@ -146,11 +150,7 @@ export default class 单据字段Tab extends React.Component {
    * ```
    */
   handleSelect(nodeData) {
-    const path = findPath(nodeData.code, this.props.treeData)
-      .map(n => n.code)
-      .filter(code => code.trim() !== '')
-      .reverse()
-      .join('.');
+    const path = SingleSelectTree.findPath(nodeData.code, this.props.treeData);
     // ========================================================================
     // `info.node`是TreeNode的实例，这个对象很复杂，不要直接向上抛
     // 另外发现一个"Storybook Addon Actions"的bug，就是当使用如下代码的时候
