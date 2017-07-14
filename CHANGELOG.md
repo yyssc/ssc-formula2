@@ -1,8 +1,9 @@
 # Change Log
 
-## master
+## v0.1.18
 
 - [new] custom input field and overlay style ([#18](https://github.com/yyssc/ssc-formula2/issues/18))
+- [fix] FICLOUD-1019 档案转换插入时候应该是node的path而不是code ([#19](https://github.com/yyssc/ssc-formula2/issues/19))
 
 ## v0.1.17
 
