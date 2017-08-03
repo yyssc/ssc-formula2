@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.20
+
+- [fix] failed to npm publish ([#23](https://github.com/yyssc/ssc-formula2/issues/23))
+
 ## v0.1.19
 
 - [chore] reduce bundle size ([#22](https://github.com/yyssc/ssc-formula2/issues/22))
