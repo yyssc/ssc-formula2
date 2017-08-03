@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.1.19
+
+- [chore] reduce bundle size ([#22](https://github.com/yyssc/ssc-formula2/issues/22))
+
 ## v0.1.18
 
 - [new] custom input field and overlay style ([#18](https://github.com/yyssc/ssc-formula2/issues/18))
