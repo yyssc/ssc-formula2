@@ -27,3 +27,13 @@ Run command below to bump version from v0.0.0 to v0.1.0
 ```
 npm run version:minor
 ```
+
+## git commit convention
+
+[https://github.com/airbnb/react-dates/blob/master/CHANGELOG.md](https://github.com/airbnb/react-dates/blob/master/CHANGELOG.md)
+
+- types
+  - fix
+  - new
+  - breaking
+  - deps - upgrade the dependencies
