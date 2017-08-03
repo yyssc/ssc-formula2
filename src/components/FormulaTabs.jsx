@@ -3,7 +3,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
-import { Tabs, Tab } from 'react-bootstrap';
+import Tabs from 'react-bootstrap/lib/Tabs';
+import Tab from 'react-bootstrap/lib/Tab';
 
 import 单据字段Tab from './单据字段Tab';
 import 固定值Tab from './固定值Tab';

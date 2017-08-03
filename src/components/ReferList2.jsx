@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
-import { FormGroup, FormControl } from 'react-bootstrap';
+import FormGroup from 'react-bootstrap/lib/FormGroup';
+import FormControl from 'react-bootstrap/lib/FormControl';
+
 import ReferListShape from '../shapes/ReferListShape';
 
 const propTypes = forbidExtraProps({
