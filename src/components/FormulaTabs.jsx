@@ -75,7 +75,7 @@ export default class FormulaTabs extends React.Component {
     return (
       <div>
         <Tabs defaultActiveKey={'单据字段'} id="ssc-formula2">
-          {/* <Tab eventKey={'函数'} title="函数">Tab 1 content</Tab>*/}
+          {/* <Tab eventKey={'函数'} title="函数">Tab 1 content</Tab> */}
           <Tab eventKey={'单据字段'} title="单据字段">
             <单据字段Tab
               treeData={this.props.单据字段TreeData}
@@ -94,7 +94,7 @@ export default class FormulaTabs extends React.Component {
               onInsert={this.props.on档案转换Insert}
             />
           </Tab>
-          {/* <Tab eventKey={'环境变量'} title="环境变量">Tab 3 content</Tab>*/}
+          {/* <Tab eventKey={'环境变量'} title="环境变量">Tab 3 content</Tab> */}
         </Tabs>
       </div>
     );
