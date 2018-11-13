@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const json = [
   {
     parentKey: null,

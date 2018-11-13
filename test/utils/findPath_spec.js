@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { expect } from 'chai';
 
 import findPath from '../../src/utils/findPath';

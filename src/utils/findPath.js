@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // https://github.com/react-component/tree/issues/22
 // findPath() Copy from http://react-component.github.io/tree-select/examples/basic.html
 export default function findPathByCode(value, data) {

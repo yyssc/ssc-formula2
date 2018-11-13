@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-pascal-case */
+/* eslint-disable react/jsx-pascal-case,linebreak-style */
 
 import React from 'react';
 import PropTypes from 'prop-types';

@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // import 'rc-tree/assets/index.css';
 import React, { PropTypes } from 'react';
 import FormControl from 'react-bootstrap/lib/FormControl';
