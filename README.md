@@ -37,7 +37,7 @@ Ensure packages are installed with correct version numbers by running:
   Which produces and runs a command like:
 
   ```sh
-  npm install --save ssc-formula2 moment@>=#.## react@>=#.## react-dom@>=#.## ssc-refer2@>=#.## rc-tree@>=#.##
+  npm install --save ssc-formula2 moment@>=#.## react@>=#.## react-dom@>=#.## ssc-refer@>=#.## rc-tree@>=#.##
   ```
 
 ### Include component

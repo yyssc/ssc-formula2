@@ -8,7 +8,7 @@ import 档案转换ItemsData from './档案转换Data';
 
 const 单据字段TreeData = json;
 // const referDataUrl = 'http://127.0.0.1:3009/refbase_ctr/queryRefJSON';
-const referDataUrl = 'http://172.20.4.220:8080/ficloud/refbase_ctr/queryRefJSON';
+const referDataUrl = 'http://172.20.4.220/ficloud/refbase_ctr/queryRefJSON';
 
 storiesOf('Formula (公式编辑器)', module)
   .addWithInfo('default', () => (

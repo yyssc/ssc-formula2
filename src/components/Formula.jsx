@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
@@ -26,6 +27,10 @@ const propTypes = forbidExtraProps({
    */
   档案转换ItemsData: 档案转换ItemsShape.isRequired,
   固定值档案值RefCode: PropTypes.string,
+  /**
+  * 固定值标签页中参照的功能节点编码
+  */
+  固定值ReferFunCode: PropTypes.string,
 });
 
 export const defaultProps = {
@@ -43,6 +48,7 @@ const childContextTypes = {
    * 传到“固定值”标签页<固定值Tab>组件
    */
   固定值档案值RefCode: PropTypes.string,
+  referFunCode: PropTypes.string,
 };
 
 export default class Formula extends React.Component {
@@ -62,6 +68,7 @@ export default class Formula extends React.Component {
     return {
       referDataUrl: this.props.固定值ReferDataUrl,
       固定值档案值RefCode: this.props.固定值档案值RefCode,
+      referFunCode: this.props.固定值ReferFunCode,
     };
   }
 

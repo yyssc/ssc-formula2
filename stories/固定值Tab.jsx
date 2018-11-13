@@ -6,13 +6,14 @@ import WithContext from 'react-with-context';
 import 固定值Tab from '../src/components/固定值Tab';
 
 // const referDataUrl = 'http://127.0.0.1:3009/refbase_ctr/queryRefJSON';
-const referDataUrl = 'http://172.20.4.220:8080/ficloud/refbase_ctr/queryRefJSON';
+const referDataUrl = 'http://172.20.4.220/ficloud/refbase_ctr/queryRefJSON';
 
 storiesOf('固定值Tab', module)
   .addWithInfo('default', () => (
     <WithContext
       context={{
         referDataUrl,
+        referFunCode: 'conversion',
         固定值档案值RefCode: null,
       }}
     >

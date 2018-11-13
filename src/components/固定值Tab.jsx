@@ -1,13 +1,15 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
-import { Refers } from 'ssc-refer2';
+import { Refers } from 'ssc-refer';
 
 import { FilterAccSubjectRefer, ReferList } from 'yzb-comp';
 
 /**
  * 郭老师说暂时使用doctype，不过目前（）后端暂时没有测试数据提供
  * 所以这里提供一个接口，让外面组件可以使用其他比如`refCode: 'entity'`进行测试
+// eslint-disable-next-line linebreak-style
  */
 const 档案RefCode = 'entity';
 
@@ -42,6 +44,7 @@ const contextTypes = {
    * 类型为string|null
    */
   固定值档案值RefCode: PropTypes.string,
+  referFunCode: PropTypes.string,
 };
 
 export default class 固定值Tab extends React.Component {
@@ -110,28 +113,29 @@ export default class 固定值Tab extends React.Component {
   render档案值Refer() {
     const 档案值ReferConditions = {
       refCode: this.state.档案值RefCode,
-      refType: 'table',
+      refType: 'list',
       displayFields: ['id', 'code', 'name'],
+      funcode: this.context.referFunCode,
     };
     switch (this.state.档案值RefCode) {
       default:
       case null:
         break;
-      case 'attribute':
-        档案值ReferConditions.convertcol = '{name:displayName}';
-        档案值ReferConditions.fields = ['id', 'displayName'];
-        档案值ReferConditions.displayFields = ['id', 'displayName'];
-        break;
-      case 'entity':
-        // http://git.yonyou.com/sscplatform/FC/issues/55
-        // 郭老师说对于参照实体的应该特殊处理
-        // 赵老师给出了特殊处理的方法就是添加`convertcol`参数
-        档案值ReferConditions.convertcol = '{name:displayName}';
-        // http://git.yonyou.com/sscplatform/FC/issues/55#note_53358
-        // 按照赵老师说的，还需要添加几个参数
-        档案值ReferConditions.fields = ['id', 'entityName', 'displayName'];
-        档案值ReferConditions.displayFields = ['id', 'displayName'];
-        break;
+      // case 'attribute':
+      //   档案值ReferConditions.convertcol = '{name:displayName}';
+      //   档案值ReferConditions.fields = ['id', 'displayName'];
+      //   档案值ReferConditions.displayFields = ['id', 'displayName'];
+      //   break;
+      // case 'entity':
+      //   // http://git.yonyou.com/sscplatform/FC/issues/55
+      //   // 郭老师说对于参照实体的应该特殊处理
+      //   // 赵老师给出了特殊处理的方法就是添加`convertcol`参数
+      //   档案值ReferConditions.convertcol = '{name:displayName}';
+      //   // http://git.yonyou.com/sscplatform/FC/issues/55#note_53358
+      //   // 按照赵老师说的，还需要添加几个参数
+      //   档案值ReferConditions.fields = ['id', 'entityName', 'displayName'];
+      //   档案值ReferConditions.displayFields = ['id', 'displayName'];
+      //   break;
       case 'accsubject':
         return (
           <FilterAccSubjectRefer
@@ -156,17 +160,13 @@ export default class 固定值Tab extends React.Component {
   render() {
     const 档案ReferConditions = {
       refCode: 档案RefCode,
-      refType: 'table',
+      refType: 'list',
       fields: [
         'id',
-        'displayName',
-        'entityName',
-        'entityType',
-        'fullClassName',
-        'mainTableName',
+        'code',
+        'name',
       ],
-      displayFields: ['id', 'entityName', 'displayName'],
-      convertcol: '{code:entityName,name:displayName}',
+      displayFields: ['id', 'code', 'name'],
     };
     return (
       <div>
