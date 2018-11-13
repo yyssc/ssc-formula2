@@ -117,6 +117,9 @@ export default class 固定值Tab extends React.Component {
       displayFields: ['id', 'code', 'name'],
       funcode: this.context.referFunCode,
     };
+    // if (this.context.referFilterCondition) {
+    //   档案值ReferConditions.filterCondition = this.context.档案值ReferConditions;
+    // }
     switch (this.state.档案值RefCode) {
       default:
       case null:
@@ -161,13 +164,12 @@ export default class 固定值Tab extends React.Component {
     const 档案ReferConditions = {
       refCode: 档案RefCode,
       refType: 'list',
-      fields: [
-        'id',
-        'code',
-        'name',
-      ],
+      funcode: this.context.referFunCode,
       displayFields: ['id', 'code', 'name'],
     };
+    // if (this.context.referFilterCondition) {
+    //   档案ReferConditions.filterCondition = this.context.referFilterCondition;
+    // }
     return (
       <div>
         档案
