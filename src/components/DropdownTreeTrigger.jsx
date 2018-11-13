@@ -1,4 +1,4 @@
-/* eslint-disable linebreak-style */
+/* eslint-disable linebreak-style,react/forbid-prop-types */
 // import 'rc-tree/assets/index.css';
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';

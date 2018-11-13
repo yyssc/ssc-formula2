@@ -1,4 +1,4 @@
-/* eslint-disable linebreak-style */
+/* eslint-disable linebreak-style,react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
@@ -152,7 +152,7 @@ export default class 单据字段Tab extends React.Component {
    */
   handleSelect(nodeData) {
     // const path = SingleSelectTree.findPath(nodeData.code, this.props.treeData);
-    let path = nodeData.key.substr(nodeData.key.indexOf('.') + 1);
+    const path = nodeData.key.substr(nodeData.key.indexOf('.') + 1);
     // ========================================================================
     // `info.node`是TreeNode的实例，这个对象很复杂，不要直接向上抛
     // 另外发现一个"Storybook Addon Actions"的bug，就是当使用如下代码的时候

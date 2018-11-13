@@ -1,4 +1,4 @@
-/* eslint-disable linebreak-style */
+/* eslint-disable linebreak-style,react/prop-types */
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';

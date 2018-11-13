@@ -1,4 +1,4 @@
-/* eslint-disable linebreak-style,linebreak-style */
+/* eslint-disable linebreak-style,linebreak-style,react/jsx-no-comment-textnodes,react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
@@ -52,11 +52,12 @@ export default class DetailBox extends React.Component {
   }
 
   render() {
+    const { details } = this.props;
     return (
       <div className="detail-box">
         <hr />
         {
-          this.props.details.map(detail => (
+          details.map(detail => (
             <p key={detail}>{detail}</p>
           ))
         }
